@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("_header.ejs")%>
+    
+      <main class="admin-dashboard">
+        <h1>Welcome, <%= user.username %></h1>
+        <div class="stats">
+          <a href="/admin/medicines">Manage Medicines</a> |
+          <a href="/admin/reports">View Reports</a>
+        </nav>
+      </main>
+    </body>
+    </html>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediPrime</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>  <%- include("_header.ejs")%>
+
+
+  <main class="find-medicine-layout">
+    <section class="intros">
+      <h1>Find Your Medicine</h1>
+      <p>Search for medicines available in your area.</p>
+      <div class="button1">
+        <a href="/report-issue" class="btn">📝 Report an Issue</a>
+
+    <div class="search-sections">
+      <h2>Find Medicine</h2>
+      <form class="form1" method="get" action="/findMedicine">
+        <input type="text" name="query" placeholder="Search for medicines..." value="<%= query %>"/>
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="results">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

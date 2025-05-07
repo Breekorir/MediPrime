@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CiviMed | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <link rel="stylesheet" href="styles.css" />
+  <%- include("_header.ejs")%>
+  <main class="home-content">
+    <section class="intro">     <div class="texts"> 
+      <h1>Welcome to  MediPrime</h1>
+      <p>Your one-stop solution to find medicines and reporting medical issues.</p</div>>
+      <div class="cta-buttons">
+        <!-- Updated Link to Find Medicine Page -->
+        <a href="/findMedicine" class="btn">🔍 Find Medicine</a>
+        <a href="/report-issue" class="btn">📝 Report an Issue</a>
+      </div>
+    </section>
+    <section class="stats">
+      <h2>Community Impact</h2>
+      <div class="stats-cards">
+        <div class="card">🏥 <strong>52</strong> Pharmacies</div>
+        <div class="card">💊 <strong>120+</strong> Medicines Tracked</div>
+        <div class="card">🧾 <strong>134</strong> Medical Reports</div>
+      </div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>
