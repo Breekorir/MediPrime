@@ -7,23 +7,21 @@
   <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>  <%- include("_header.ejs")%>
+<h2>Search Medicines</h2>
+<form action="/medicines/filter" method="GET">
+  <input type="text" name="name" placeholder="Medicine Name" value="<%= filters?.name || '' %>">
+  <input type="text" name="location" placeholder="Location" value="<%= filters?.location || '' %>">
+  
+  <select name="availability">
+    <option value="">--Availability--</option>
+    <option value="1" <%= filters?.availability == "1" ? "selected" : "" %>>In Stock</option>
+    <option value="0" <%= filters?.availability == "0" ? "selected" : "" %>>Out of Stock</option>
+  </select>
+  
+  <input type="text" name="pharmacy" placeholder="Pharmacy Name" value="<%= filters?.pharmacy || '' %>">
+  <button type="submit">Search</button>
+</form>
 
-
-  <main class="find-medicine-layout">
-    <section class="intros">
-      <h1>Find Your Medicine</h1>
-      <p>Search for medicines available in your area.</p>
-      <div class="button1">
-        <a href="/report-issue" class="btn">📝 Report an Issue</a>
-
-    <div class="search-sections">
-      <h2>Find Medicine</h2>
-      <form class="form1" method="get" action="/findMedicine">
-        <input type="text" name="query" placeholder="Search for medicines..." value="<%= query %>"/>
-        <button type="submit">Search</button>
-      </form>
-
-      <div id="results">
       </div>
     </div>
   </main>

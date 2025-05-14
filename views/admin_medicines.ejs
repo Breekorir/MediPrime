@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Medicines - MediPrime Admin</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <%- include("_header.ejs") %>
+
+  <main class="admin-medicine-page">
+    <h1>Manage Medicines</h1>
+    <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Availability</th>
+          <th>Actions</th>
+        </tr>
+        <% medicines.forEach(med => { %>
+          <tr>
+            <form method="POST" action="/admin/medicines/<%= med.id %>/edit">
+              <td><input type="text" name="name" value="<%= med.name %>"/></td>
+              <td><input type="text" name="location" value="<%= med.location %>"/></td>
+              <td>
+                <select name="availability">
+                  <option value="1" <%= med.availability ? "selected" : "" %>>Available</option>
+                  <option value="0" <%= !med.availability ? "selected" : "" %>>Not Available</option>
+                </select>
+              </td>
+              <td>
+                <button type="submit">Save</button>
+                <a href="/admin/medicines/<%= med.id %>/delete" onclick="return confirm('Are you sure?')">Delete</a>
+              </td>
+            </form>
+          </tr>
+        <% }) %>
+      </table>
+      
+  </main>
+</body>
+</html>

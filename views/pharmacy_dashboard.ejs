@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pharmacy Dashboard - MediPrime</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <%- include("_header.ejs") %>
+
+  <div class="container">
+    <h2>Welcome, <%= pharmacy.name %></h2>
+
+    <h3>Your Medicines</h3>
+    <a href="/pharmacy/medicines/new">Add New Medicine</a>
+    <ul>
+      <% medicines.forEach(medicine => { %>
+        <li>
+          <strong><%= medicine.name %></strong><br />
+          Location: <%= medicine.location %><br />
+          Availability: <%= medicine.availability %><br />
+          <a href="/pharmacy/medicines/<%= medicine.id %>/edit">Edit</a>
+          <a href="/pharmacy/medicines/<%= medicine.id %>/delete">Delete</a>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>

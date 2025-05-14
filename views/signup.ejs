@@ -6,14 +6,21 @@
   <title>Sign Up - MediPrime</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-<body>  <%- include("_header.ejs")%>
+<body>
+  <%- include("_header.ejs") %>
 
   <div class="container">
     <h2>Create an Account</h2>
-    <form action="/signup" method="POST">
+    <form action="/register" method="POST">
       <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required />
+        <label>Register as:</label><br>
+        <label><input type="radio" name="role" value="user" checked /> Individual</label>
+        <label><input type="radio" name="role" value="pharmacy" /> Pharmacy</label>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full Name or Pharmacy Name:</label>
+        <input type="text" name="name" required />
       </div>
       
       <div class="form-group">
@@ -28,6 +35,7 @@
 
       <button type="submit">Sign Up</button>
     </form>
+    
     <p>Already have an account? <a href="/login">Login here</a></p>
   </div>
 </body>

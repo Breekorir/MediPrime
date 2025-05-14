@@ -1,0 +1,21 @@
+<%- include("_header") %>
+
+<h2>Filtered Medicine Results</h2>
+
+<% if (medicines.length > 0) { %>
+  <ul>
+    <% medicines.forEach(med => { %>
+      <li>
+        <strong><%= med.name %></strong> - <%= med.location %> - 
+        <% if (med.availability) { %>✔️ In Stock<% } else { %>❌ Out of Stock<% } %> - 
+        <%= med.pharmacy_name %>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No medicines found matching the filters.</p>
+<% } %>
+
+<a href="/findMedicine">🔙 Back to Search</a>
+
+<%- include("partials/footer") %>

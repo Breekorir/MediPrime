@@ -6,11 +6,18 @@
   <title>Login - MediPrime</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-<body>  <%- include("_header.ejs")%>
+<body>
+  <%- include("_header.ejs") %>
 
   <div class="container">
     <h2>Login to MediPrime</h2>
     <form action="/login" method="POST">
+      <div class="form-group">
+        <label>Login as:</label><br>
+        <label><input type="radio" name="role" value="user" checked /> Individual</label>
+        <label><input type="radio" name="role" value="pharmacy" /> Pharmacy</label>
+      </div>
+
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" name="email" required />
@@ -23,7 +30,8 @@
       
       <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <a href="/signup">Sign up here</a></p>
+    
+    <p>Don't have an account? <a href="/register">Sign up here</a></p>
   </div>
 </body>
 </html>

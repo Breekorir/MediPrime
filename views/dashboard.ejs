@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - MediPrime</title>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-    <%- include("_header.ejs")%>
+  <%- include("_header.ejs") %>
+
+  <div class="container">
+    <h2>Welcome, <%= user.username %></h2>
     
-      <main class="admin-dashboard">
-        <h1>Welcome, <%= user.username %></h1>
-        <div class="stats">
-          <a href="/admin/medicines">Manage Medicines</a> |
-          <a href="/admin/reports">View Reports</a>
-        </nav>
-      </main>
-    </body>
-    </html>
-    
+    <h3>Search for Medicines</h3>
+    <form action="/findMedicine" method="GET">
+      <input type="text" name="query" placeholder="Enter medicine name..." required />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="medicine-results">
+      <% if (medicines && medicines.length > 0) { %>
+        <ul>
+          <% medicines.forEach(medicine => { %>
+            <li>
+              <strong><%= medicine.name %></strong><br />
+              Available at: <%= medicine.location %><br />
+              Availability: <%= medicine.availability %>
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>No results found</p>
+      <% } %>
+    </div>
+  </div>
 </body>
 </html>
