@@ -3,27 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MediPrime</title>
-  <link rel="stylesheet" href="/styles.css"/>
-</head>
-<body>  <%- include("_header.ejs")%>
-<h2>Search Medicines</h2>
-<form action="/medicines/filter" method="GET">
-  <input type="text" name="name" placeholder="Medicine Name" value="<%= filters?.name || '' %>">
-  <input type="text" name="location" placeholder="Location" value="<%= filters?.location || '' %>">
-  
-  <select name="availability">
-    <option value="">--Availability--</option>
-    <option value="1" <%= filters?.availability == "1" ? "selected" : "" %>>In Stock</option>
-    <option value="0" <%= filters?.availability == "0" ? "selected" : "" %>>Out of Stock</option>
-  </select>
-  
-  <input type="text" name="pharmacy" placeholder="Pharmacy Name" value="<%= filters?.pharmacy || '' %>">
-  <button type="submit">Search</button>
-</form>
+  <title>Find Medicine - MediPrime</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .category-filters {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .click {
+      padding: 8px 14px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    } 
+    .click a{
+      color: white;
+      text-decoration: none;
+    }
+    .category-filters button:hover {
+      background-color: #45a049;
+    }
 
+    .category-section {
+      margin-bottom: 40px;
+    }
+    .category-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 5px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .medicine-card {
+      flex: 1 1 250px;
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .medicine-card:hover {
+      transform: scale(1.02);
+    }
+
+    .med-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color:white;
+      margin-bottom: 8px;
+    }
+    .med-details {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    form {
+      margin-top: 12px;
+    }
+
+    input[type="number"] {
+      width: 50px;
+      padding: 4px;
+      margin-right: 8px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <%- include("_header.ejs") %>
+
+  <div class="container">
+    <h2>Find Medicine</h2>
+
+    <form method="GET" action="/findMedicine">
+      <input type="text" name="query" placeholder="Search by name, location..." value="<%= query || '' %>" />
+      <button type="submit">Search</button>
+    </form>
+
+    <% if (grouped && Object.keys(grouped).length > 0) { %>
+
+      <!-- Filter Buttons -->
+      <div class="category-filters">
+        <button onclick="filterCategory('all')">All</button>
+        <% for (let cat in grouped) { %>
+          <button class="click"onclick="filterCategory('<%= cat %>')"><%= cat %></button>
+        <% } %>
       </div>
-    </div>
-  </main>
+
+      <!-- Category Sections -->
+      <% for (let category in grouped) { %>
+        <div class="category-section" data-category="<%= category %>">
+          <h3 class="category-title"><%= category %></h3>
+          <div class="card-container">
+            <% grouped[category].forEach(med => { %>
+              <div class="medicine-card">
+                <div class="med-name"><%= med.name %></div>
+                <div class="med-details">Location: <%= med.location %></div>
+                <div class="med-details">Available: <%= med.availability %></div>
+                <div class="med-details">Pharmacy: <%= med.pharmacy_name %></div>
+
+                <% if (user) { %>
+                  <form action="/order" method="POST">
+                    <input type="hidden" name="medicine_id" value="<%= med.id %>" />
+                    <input type="number" name="quantity" value="1" min="1" max="10" required />
+                    <button type="submit">Order</button>
+                  </form>
+                <% } else { %>
+                  <small><button class="click"><a href="/login">Login to order</a></button></small>
+                <% } %>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      <% } %>
+
+    <% } else { %>
+      <p>No medicines found.</p>
+    <% } %>
+  </div>
+
+  <script>
+    function filterCategory(category) {
+      document.querySelectorAll('.category-section').forEach(section => {
+        if (category === 'all' || section.dataset.category === category) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

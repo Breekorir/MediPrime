@@ -1,0 +1,26 @@
+<h1>Your Orders</h1>
+
+<% if (orders.length === 0) { %>
+  <p>You have no orders yet.</p>
+<% } else { %>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Medicine</th>
+        <th>Quantity</th>
+        <th>Status</th>
+        <th>Order Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.forEach(order => { %>
+        <tr>
+          <td><%= order.medicine_name %></td>
+          <td><%= order.quantity %></td>
+          <td><%= order.status %></td>
+          <td><%= new Date(order.order_date).toLocaleString() %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
