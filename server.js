@@ -91,23 +91,30 @@ app.get("/findMedicine", (req, res) => {
 // Dashboard (admin and user)
 app.get("/dashboard", (req, res) => {
   if (!req.session.user) return res.redirect("/login");
-  if (req.session.user.role === 'admin') {
-    db.query("SELECT COUNT(*) AS medCount FROM medicines", (err, meds) => {
-      if (err) return res.status(500).send("Error loading dashboard");
-  
-      // No reports table yet — default to 0
-      res.render("dashboard.ejs", {
-        medCount: meds[0].medCount,
-        reportCount: 0,
-        user: req.session.user,
-      });
-    });
 
-  
-  } else {
-    res.render("dashboard.ejs", { user: req.session.user });
-  }
+  db.query("SELECT * FROM medicines WHERE pharmacy_id = ?", [req.session.user.id], (err, results) => {
+    if (err) return res.status(500).send("Error loading medicines");
+
+    if (req.session.user.role === 'admin') {
+      db.query("SELECT COUNT(*) AS medCount FROM medicines", (err, meds) => {
+        if (err) return res.status(500).send("Error loading dashboard");
+
+        res.render("dashboard.ejs", {
+          medCount: meds[0].medCount,
+          reportCount: 0,
+          user: req.session.user,
+          medicines: results
+        });
+      });
+    } else {
+      res.render("dashboard.ejs", {
+        user: req.session.user,
+        medicines: results
+      });
+    }
+  });
 });
+
 
 // Admin redirect (optional)
 app.get("/admin", (req, res) => {
@@ -355,7 +362,129 @@ app.get("/pharmacy/medicines/:id/edit", (req, res) => {
 
 app.post("/pharmacy/medicines/:id/edit", (req, res) => {
   const { id } = req.params;
-  const { name, location, availability } = req.body;
+  const { name, location, availability } = req.body;const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' }),
+  ],
+});
+
+// Add this line at the top of the file
+
+// ...
+
+// Add logs to the routes
+app.get("/", (req, res) => {
+  logger.info('GET /');
+  res.render("home.ejs", { user: req.session.user || null });
+});
+
+app.get("/signup", (req, res) => {
+  logger.info('GET /signup');
+  res.render("signup.ejs");
+});
+
+app.get("/login", (req, res) => {
+  logger.info('GET /login');
+  res.render("login.ejs");
+});
+
+// ...
+
+app.post("/signup", (req, res) => {
+  logger.info('POST /signup');
+  const { name, email, password, role } = req.body;
+  const hashedPassword = bcrypt.hashSync(password, 10);
+
+  if (role === "user") {
+    db.query(
+      "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'user')",
+      [name, email, hashedPassword],
+      (err) => {
+        if (err) {
+          logger.error('Error signing up user', err);
+          return res.status(500).send("User registration failed");
+        }
+        logger.info('User signed up successfully');
+        res.redirect("/login");
+      }
+    );
+  } else if (role === "pharmacy") {
+    db.query(
+      "INSERT INTO pharmacies (name, email, password) VALUES (?, ?, ?)",
+      [name, email, hashedPassword],
+      (err) => {
+        if (err) {
+          logger.error('Error signing up pharmacy', err);
+          return res.status(500).send("Pharmacy registration failed");
+        }
+        logger.info('Pharmacy signed up successfully');
+        res.redirect("/login");
+      }
+    );
+  } else {
+    logger.error('Invalid role');
+    res.status(400).send("Invalid role");
+  }
+});
+
+// ...
+
+app.post("/login", (req, res) => {
+  logger.info('POST /login');
+  const { email, password, role } = req.body;
+
+  if (role === "user") {
+    db.query("SELECT * FROM users WHERE email = ?", [email], (err, results) => {
+      if (err || results.length === 0) {
+        logger.error('Invalid credentials');
+        return res.status(401).send("Invalid credentials");
+      }
+      const user = results[0];
+      if (bcrypt.compareSync(password, user.password)) {
+        logger.info('User logged in successfully');
+        req.session.user = user;
+        res.redirect("/dashboard");
+      } else {
+        logger.error('Invalid password');
+        res.status(401).send("Invalid password");
+      }
+    });
+  } else if (role === "pharmacy") {
+    db.query("SELECT * FROM pharmacies WHERE email = ?", [email], (err, results) => {
+      if (err || results.length === 0) {
+        logger.error('Invalid credentials');
+        return res.status(401).send("Invalid credentials");
+      }
+      const pharmacy = results[0];
+      if (bcrypt.compareSync(password, pharmacy.password)) {
+        logger.info('Pharmacy logged in successfully');
+        req.session.pharmacy = pharmacy;
+        res.redirect("/pharmacy/dashboard");
+      } else {
+        logger.error('Invalid password');
+        res.status(401).send("Invalid password");
+      }
+    });
+  } else {
+    logger.error('Invalid role');
+    res.status(400).send("Invalid role");
+  }
+});
+
+// ...
+
+app.get("/logout", (req, res) => {
+  logger.info('GET /logout');
+  req.session.destroy(() => {
+    logger.info('Session destroyed');
+    res.redirect("/");
+  });
+});
 
   db.query(
     "UPDATE medicines SET name = ?, location = ?, availability = ? WHERE id = ? AND pharmacy_id = ?",
