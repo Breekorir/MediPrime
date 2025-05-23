@@ -4,16 +4,83 @@
   <meta charset="UTF-8" />
   <title>Add New Medicine</title>
   <link rel="stylesheet" href="/styles.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic styling for the form elements, can be combined with Tailwind or your styles.css */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
+    }
+    .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #4b5563;
+    }
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus {
+        outline: none;
+        border-color: #6366f1; /* indigo-500 */
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+    button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 1.5rem;
+        background-color: #4f46e5; /* indigo-600 */
+        color: #ffffff;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+        background-color: #4338ca; /* indigo-700 */
+    }
+  </style>
 </head>
 <body>
-  <%- include("_header.ejs") %>
+  <%- include("_header.ejs") %> 
   
   <div class="container">
     <h2>Add a New Medicine</h2>
-    <form action="/pharmacy/medicines/new" method="POST">
+    <form action="/pharmacy_add_medicines" method="POST"> <!-— CHANGED THIS LINE —>
       <div class="form-group">
         <label for="name">Medicine Name:</label>
         <input type="text" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category:</label> <input type="text" name="category" required />
       </div>
 
       <div class="form-group">
@@ -23,11 +90,7 @@
 
       <div class="form-group">
         <label for="availability">Availability:</label>
-        <select name="availability" required>
-          <option value="Available">Available</option>
-          <option value="Out of Stock">Out of Stock</option>
-        </select>
-      </div>
+        <input type="number" name="availability" required min="0" value="0"/> </div>
 
       <button type="submit">Add Medicine</button>
     </form>

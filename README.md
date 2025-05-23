@@ -1,6 +1,6 @@
 # MediPrime 🏥💊
 
-MediPrime is a full-stack web application for tracking and finding medicine availability across various pharmacies. The platform allows both individuals and pharmacies to register, login, and interact with the system based on their roles.
+MediPrime is a full-stack web application for tracking and finding medicine availability across various pharmacies. The platform allows both individuals and pharmacies to register, login, and interact with the system based on their roles.It also allows users to search for medicines, view their availability, and get notified when a medicine is available.It allows users to order the available medicines.
 
 ---
 

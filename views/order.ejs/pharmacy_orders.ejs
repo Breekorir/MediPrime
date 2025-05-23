@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pharmacy Orders - MediPrime</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <%- include("../_header.ejs") %>
+
+  <div class="container">
+    <h2>Orders for Your Medicines</h2>
+
+    <% if (orders.length > 0) { %>
+      <table>
+        <thead>
+<tr>
+  <td><%= index + 1 %></td>
+  <td><%= order.medicine_name %></td>
+  <td><%= order.quantity %></td>
+  <td>
+    <form action="/pharmacy_orders/update" method="POST">
+      <input type="hidden" name="order_id" value="<%= order.id %>">
+      <select name="new_status" onchange="this.form.submit()">
+        <option value="Pending" <%= order.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+        <option value="Fulfilled" <%= order.status === 'Fulfilled' ? 'selected' : '' %>>Fulfilled</option>
+        <option value="Cancelled" <%= order.status === 'Cancelled' ? 'selected' : '' %>>Cancelled</option>
+      </select>
+    </form>
+  </td>
+  <td><%= order.buyer_name %></td>
+  <td><%= new Date(order.created_at).toLocaleString() %></td>
+</tr>
+</thead>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No orders found for your medicines yet.</p>
+    <% } %>
+  </div>
+</body>
+</html>

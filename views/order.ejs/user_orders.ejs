@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Orders - MediPrime</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <%- include("../_header.ejs") %>
+
+  <div class="container">
+    <h2>My Orders</h2>
+
+    <% if (orders.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Medicine</th>
+            <th>Pharmacy</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% orders.forEach((order, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= order.medicine_name %></td>
+              <td><%= order.pharmacy_name %></td>
+              <td><%= order.quantity %></td>
+              <td><%= order.status %></td>
+              <td><%= new Date(order.created_at).toLocaleString() %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>You have not placed any orders yet.</p>
+    <% } %>
+  </div>
+</body>
+</html>
