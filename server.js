@@ -1,41 +1,62 @@
+require("dotenv").config(); // Load environment variables first
+
 const express = require("express");
 const path = require("path");
 const mysql = require("mysql2/promise"); // Use mysql2 for promise support
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 const winston = require("winston");
+const { body, validationResult } = require("express-validator"); // For input validation
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use port from env or default to 3000
 
-// Logger setup
+// --- Constants for Roles ---
+const ROLES = {
+  ADMIN: 'admin',
+  USER: 'user',
+  PHARMACY: 'pharmacy'
+};
+
+// --- Logger setup ---
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
-    winston.format.timestamp(),
+    winston.format.timestamp({ format: 'YYYY-MM-DDTHH:mm:ss.SSSZ' }),
     winston.format.json()
   ),
   transports: [
     new winston.transports.File({ filename: "error.log", level: "error" }),
     new winston.transports.File({ filename: "combined.log" }),
+    new winston.transports.Console({ // Also log to console for development
+      format: winston.format.combine(winston.format.colorize(), winston.format.simple())
+    })
   ],
 });
 
-// DB connection
+// --- Database Connection ---
+let db; // Declared here, but initialized in startServer
+
 async function initDb() {
-  const db = await mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "mediprime_db",
-  });
-  return db;
+  try {
+    const connection = await mysql.createConnection({
+      host: process.env.DB_HOST || "localhost",
+      user: process.env.DB_USER || "root",
+      password: process.env.DB_PASSWORD || "",
+      database: process.env.DB_DATABASE || "mediprime_db",
+    });
+    logger.info("Database connected successfully");
+    return connection;
+  } catch (err) {
+    logger.error("Database connection failed", err);
+    throw err; // Re-throw to be caught by startServer
+  }
 }
 
-// Middleware setup
+// --- Middleware setup ---
 app.use(
   session({
-    secret: "mediprime-secret", // Use a strong, unique secret in production
+    secret: process.env.SESSION_SECRET, // Use environment variable for secret
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -60,22 +81,40 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// --- Auth Middleware ---
+const isAuthenticated = (req, res, next) => {
+  if (!req.session.user) {
+    logger.warn(`Unauthorized access attempt to ${req.originalUrl}`);
+    return res.redirect("/login");
+  }
+  next();
+};
+
+const authorizeRole = (roles = []) => {
+  if (typeof roles === 'string') {
+    roles = [roles]; // Ensure roles is an array
+  }
+
+  return (req, res, next) => {
+    if (!req.session.user) {
+      logger.warn(`Unauthorized access: No user session for ${req.originalUrl}`);
+      return res.redirect("/login");
+    }
+
+    if (roles.length && !roles.includes(req.session.user.role)) {
+      logger.warn(`Access denied for user '${req.session.user.email}' (role: ${req.session.user.role}) to ${req.originalUrl}`);
+      return res.status(403).render("403.ejs", { user: res.locals.user, message: "Access Denied: You do not have permission to view this page." });
+    }
+    next();
+  };
+};
+
 // ===== Routes =====
-let db; // Global DB connection
-initDb()
-  .then((connection) => {
-    db = connection;
-    logger.info("Database connected successfully");
-  })
-  .catch((err) => {
-    logger.error("Database connection failed", err);
-    process.exit(1); // Exit process if DB connection fails
-  });
 
 // Homepage
 app.get("/", (req, res) => {
   logger.info("GET /");
-  res.render("landing.ejs", { user: res.locals.user });
+  res.render("landing.ejs");
 });
 
 // Signup page
@@ -91,27 +130,15 @@ app.get("/login", (req, res) => {
 });
 
 // Pharmacy add medicine page
-app.get("/pharmacy_add_medicine", (req, res) => {
+app.get("/pharmacy_add_medicine", isAuthenticated, authorizeRole(ROLES.PHARMACY), (req, res) => {
   logger.info("GET /pharmacy_add_medicine");
-  // Check if user is logged in and has 'pharmacy' role
-  if (!req.session.user || req.session.user.role !== "pharmacy") {
-    logger.warn("Unauthorized access to /pharmacy_add_medicine");
-    return res.redirect("/login");
-  }
   res.render("pharmacy_add_medicine");
 });
 
 // Pharmacy edit medicines page
-app.get("/pharmacy_edit_medicines", async (req, res) => {
+app.get("/pharmacy_edit_medicines", isAuthenticated, authorizeRole(ROLES.PHARMACY), async (req, res) => {
   logger.info("GET /pharmacy_edit_medicines");
-  // Check if user is logged in and has 'pharmacy' role
-  if (!req.session.user || req.session.user.role !== "pharmacy") {
-    logger.warn("Unauthorized access to /pharmacy_edit_medicines");
-    return res.redirect("/login");
-  }
-
   try {
-    // Fetch medicines belonging to the logged-in pharmacy
     const [medicines] = await db.execute(
       "SELECT * FROM medicines WHERE pharmacy_id = ?",
       [req.session.user.id]
@@ -123,7 +150,7 @@ app.get("/pharmacy_edit_medicines", async (req, res) => {
   }
 });
 
-// Medicine search page with grouping by category
+// Medicine search page with grouping by category (This will serve as the ordering page)
 app.get("/findMedicine", async (req, res) => {
   logger.info("GET /findMedicine");
   const search = req.query.query || "";
@@ -143,7 +170,6 @@ app.get("/findMedicine", async (req, res) => {
     res.render("findMedicine", {
       query: search,
       grouped,
-      user: res.locals.user, // Pass user for navigation/display
     });
   } catch (err) {
     logger.error("Database error on /findMedicine", err);
@@ -152,35 +178,29 @@ app.get("/findMedicine", async (req, res) => {
 });
 
 // Dashboard (admin, user, and pharmacy)
-app.get("/dashboard", async (req, res) => {
+app.get("/dashboard", isAuthenticated, async (req, res) => {
   logger.info("GET /dashboard");
 
-  if (!req.session.user) {
-    logger.warn("Unauthorized access to /dashboard");
-    return res.redirect("/login");
-  }
-
   try {
-    if (req.session.user.role === "admin") {
+    if (req.session.user.role === ROLES.ADMIN) {
       const [meds] = await db.execute("SELECT COUNT(*) AS medCount FROM medicines");
       const [users] = await db.execute("SELECT COUNT(*) AS userCount FROM users WHERE role = 'user'");
       const [pharmacies] = await db.execute("SELECT COUNT(*) AS pharmacyCount FROM pharmacies");
+      // Re-added order count for admin dashboard
       const [orders] = await db.execute("SELECT COUNT(*) AS orderCount FROM orders");
+      const [allMedicines] = await db.execute("SELECT * FROM medicines");
 
       res.render("dashboard.ejs", {
         medCount: meds[0].medCount,
         userCount: users[0].userCount,
         pharmacyCount: pharmacies[0].pharmacyCount,
-        orderCount: orders[0].orderCount,
-        user: req.session.user,
+        orderCount: orders[0].orderCount, // Re-added
+        medicines: allMedicines,
       });
-    } else if (req.session.user.role === "pharmacy") {
-      // Pharmacy dashboard, redirect to /pharmacy/dashboard
+    } else if (req.session.user.role === ROLES.PHARMACY) {
       return res.redirect("/pharmacy/dashboard");
     } else { // Regular user
-      // For a regular user, the dashboard might be the find medicine page or their orders
-      // Redirecting to findMedicine for now
-      return res.redirect("/findMedicine");
+      return res.redirect("/findMedicine"); // User's dashboard is findMedicine
     }
   } catch (err) {
     logger.error("Error loading dashboard", err);
@@ -188,20 +208,19 @@ app.get("/dashboard", async (req, res) => {
   }
 });
 
-// Order page (for regular users to view their orders)
-app.get("/orders", async (req, res) => {
-  const userId = req.session.user?.id;
-  logger.info(`Accessing /order with userId: ${userId}`);
+// --- Order-related routes (Re-added) ---
 
-  if (!userId || req.session.user.role !== 'user') { // Ensure it's a regular user
-    logger.warn("Unauthorized access to /order or not a regular user");
-    return res.redirect("/login");
-  }
+// Order page (for regular users to view their orders)
+// Order page (for regular users to view their orders)
+app.get("/orders", isAuthenticated, authorizeRole(ROLES.USER), async (req, res) => {
+  const userId = req.session.user.id;
+  logger.info(`Accessing /orders with userId: ${userId}`);
 
   try {
     const query = `
       SELECT o.id, o.quantity, o.status, o.created_at,
-             m.name AS medicine_name, p.name AS pharmacy_name
+             m.name AS medicine_name, m.category AS medicine_category, -- Added medicine category
+             p.name AS pharmacy_name, p.address AS pharmacy_address, p.email AS pharmacy_email, p.phone AS pharmacy_phone -- Added pharmacy address and phone
       FROM orders o
       JOIN medicines m ON o.medicine_id = m.id
       JOIN pharmacies p ON m.pharmacy_id = p.id
@@ -209,33 +228,34 @@ app.get("/orders", async (req, res) => {
       ORDER BY o.created_at DESC
     `;
     const [orders] = await db.execute(query, [userId]);
-    logger.info("Rendering user_orders with orders:", orders);
-    res.render("user_orders", { orders, user: req.session.user });
+    logger.info("Rendering user_orders with orders found.");
+    res.render("user_orders", { orders });
   } catch (err) {
-    logger.error("Database error in /order route", err);
+    logger.error("Database error in /orders route", err);
     res.status(500).send("Internal Server Error");
   }
 });
 
-// Redirect /order/user_orders to /order (kept for backward compatibility if links exist)
+// Redirect /order/user_orders to /orders (kept for backward compatibility if links exist)
 app.get("/order/user_orders", (req, res) => {
-  logger.info("Redirecting /order/user_orders to /order");
-  res.redirect("/order");
+  logger.info("Redirecting /order/user_orders to /orders");
+  res.redirect("/orders");
 });
 
 // Place an order (POST)
-app.post("/user_orders", async (req, res) => {
-  if (!req.session.user || req.session.user.role !== 'user') { // Ensure it's a regular user
-    logger.warn("Unauthorized order attempt or not a regular user");
-    return res.status(401).send("Please login as a user to place an order.");
+app.post("/user_orders", isAuthenticated, [ // Removed authorizeRole(ROLES.USER) here, as any logged-in user can place order
+  body('medicine_id').isInt({ gt: 0 }).withMessage('Invalid medicine ID.'),
+  body('quantity').isInt({ gt: 0 }).withMessage('Quantity must be a positive integer.')
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    logger.warn(`Validation errors on POST /user_orders: ${JSON.stringify(errors.array())}`);
+    return res.status(400).send(`Invalid order details: ${errors.array().map(e => e.msg).join(', ')}`);
   }
 
   const userId = req.session.user.id;
+  const userRole = req.session.user.role; // Get user's role
   const { medicine_id, quantity } = req.body;
-
-  if (!medicine_id || !quantity || quantity <= 0) {
-    return res.status(400).send("Invalid order details");
-  }
 
   try {
     const [results] = await db.execute(
@@ -269,9 +289,18 @@ app.post("/user_orders", async (req, res) => {
     );
 
     logger.info(
-      `User ${userId} ordered medicine ${medicine_id} quantity ${quantity}`
+      `User ${userId} (role: ${userRole}) ordered medicine ${medicine_id} quantity ${quantity}`
     );
-    res.redirect("/orders"); // Corrected redirection
+
+    // Dynamic redirection based on user role (Improvement)
+    if (userRole === ROLES.ADMIN || userRole === ROLES.USER) {
+        res.redirect("/dashboard"); // Admin and regular user go to dashboard (which redirects user to findMedicine)
+    } else if (userRole === ROLES.PHARMACY) {
+        res.redirect("/pharmacy/dashboard"); // Pharmacy goes to their dashboard
+    } else {
+        res.redirect("/"); // Fallback to homepage
+    }
+
   } catch (err) {
     logger.error("Error processing order", err);
     res.status(500).send("Internal Server Error");
@@ -279,14 +308,8 @@ app.post("/user_orders", async (req, res) => {
 });
 
 // Pharmacy orders (for pharmacies to view orders for their medicines)
-app.get("/pharmacy_orders", async (req, res) => {
-  const pharmacyId = req.session.user?.id;
-  const userRole = req.session.user?.role;
-
-  if (!pharmacyId || userRole !== "pharmacy") {
-    logger.warn("Unauthorized access to /pharmacy_orders");
-    return res.status(403).send("Unauthorized");
-  }
+app.get("/pharmacy_orders", isAuthenticated, authorizeRole(ROLES.PHARMACY), async (req, res) => {
+  const pharmacyId = req.session.user.id;
 
   try {
     const query = `
@@ -299,7 +322,7 @@ app.get("/pharmacy_orders", async (req, res) => {
       ORDER BY o.created_at DESC
     `;
     const [orders] = await db.execute(query, [pharmacyId]);
-    res.render("pharmacy_orders", { orders, user: req.session.user }); // Pass user for navigation/display
+    res.render("pharmacy_orders", { orders });
   } catch (err) {
     logger.error("Database error in /pharmacy_orders", err);
     res.status(500).send("Internal Server Error");
@@ -307,14 +330,18 @@ app.get("/pharmacy_orders", async (req, res) => {
 });
 
 // Update pharmacy order status
-app.post("/pharmacy_orders/update", async (req, res) => {
+app.post("/pharmacy_orders/update", isAuthenticated, authorizeRole(ROLES.PHARMACY), [
+  body('order_id').isInt({ gt: 0 }).withMessage('Invalid order ID.'),
+  body('new_status').isIn(['pending', 'completed', 'cancelled']).withMessage('Invalid status value.')
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    logger.warn(`Validation errors on POST /pharmacy_orders/update: ${JSON.stringify(errors.array())}`);
+    return res.status(400).send(`Invalid update details: ${errors.array().map(e => e.msg).join(', ')}`);
+  }
+
   const { order_id, new_status } = req.body;
   const user = req.session.user;
-
-  if (!user || user.role !== "pharmacy") {
-    logger.warn("Unauthorized attempt to update order");
-    return res.status(403).send("Unauthorized");
-  }
 
   try {
     // Verify that the order belongs to this pharmacy
@@ -326,6 +353,7 @@ app.post("/pharmacy_orders/update", async (req, res) => {
     );
 
     if (check.length === 0) {
+      logger.warn(`Pharmacy ${user.id} tried to update order ${order_id} which doesn't belong to them.`);
       return res.status(403).send("Order not found or not associated with your pharmacy.");
     }
 
@@ -342,20 +370,15 @@ app.post("/pharmacy_orders/update", async (req, res) => {
   }
 });
 
+// --- End Order-related routes ---
+
+
 // Admin medicines list
-app.get("/admin/medicines", async (req, res) => {
+app.get("/admin/medicines", isAuthenticated, authorizeRole(ROLES.ADMIN), async (req, res) => {
   logger.info("GET /admin/medicines");
-
-  // Only allow admin access
-  if (!req.session.user || req.session.user.role !== "admin") {
-    logger.warn("Access denied to /admin/medicines");
-    return res.status(403).send("Access denied");
-  }
-
   try {
     const [results] = await db.execute("SELECT * FROM medicines");
     res.render("admin_medicines.ejs", {
-      user: req.session.user,
       medicines: results,
     });
   } catch (err) {
@@ -365,16 +388,22 @@ app.get("/admin/medicines", async (req, res) => {
 });
 
 // Admin edit medicine (POST)
-app.post("/admin/medicines/:id/edit", async (req, res) => {
+app.post("/admin/medicines/:id/edit", isAuthenticated, authorizeRole(ROLES.ADMIN), [
+  body('name').trim().notEmpty().withMessage('Medicine name is required.'),
+  body('location').trim().notEmpty().withMessage('Location is required.'),
+  body('availability').isInt({ min: 0 }).withMessage('Availability must be a non-negative integer.'),
+  body('category').trim().notEmpty().withMessage('Category is required.')
+], async (req, res) => {
   logger.info(`POST /admin/medicines/${req.params.id}/edit`);
 
-  if (!req.session.user || req.session.user.role !== "admin") {
-    logger.warn("Access denied to admin edit medicine");
-    return res.status(403).send("Access denied");
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    logger.warn(`Validation errors on POST /admin/medicines/${req.params.id}/edit: ${JSON.stringify(errors.array())}`);
+    return res.status(400).send(`Invalid medicine details: ${errors.array().map(e => e.msg).join(', ')}`);
   }
 
   const { id } = req.params;
-  const { name, location, availability, category } = req.body; // Added category to update
+  const { name, location, availability, category } = req.body;
 
   try {
     await db.execute(
@@ -389,14 +418,9 @@ app.post("/admin/medicines/:id/edit", async (req, res) => {
   }
 });
 
-// Admin delete medicine (GET - consider changing to POST/DELETE for RESTfulness)
-app.get("/admin/medicines/:id/delete", async (req, res) => {
-  logger.info(`GET /admin/medicines/${req.params.id}/delete`);
-
-  if (!req.session.user || req.session.user.role !== "admin") {
-    logger.warn("Access denied to admin delete medicine");
-    return res.status(403).send("Access denied");
-  }
+// Admin delete medicine (POST - changed from GET for security/RESTfulness)
+app.post("/admin/medicines/:id/delete", isAuthenticated, authorizeRole(ROLES.ADMIN), async (req, res) => {
+  logger.info(`POST /admin/medicines/${req.params.id}/delete`);
 
   const { id } = req.params;
   try {
@@ -412,7 +436,7 @@ app.get("/admin/medicines/:id/delete", async (req, res) => {
 // Medicine filter endpoint
 app.get("/medicines/filter", async (req, res) => {
   logger.info("GET /medicines/filter");
-  const { name, location, availability, pharmacy, category } = req.query; // Added category filter
+  const { name, location, availability, pharmacy, category } = req.query;
 
   let query = `SELECT * FROM medicines WHERE 1=1`;
   let params = [];
@@ -426,14 +450,18 @@ app.get("/medicines/filter", async (req, res) => {
     params.push(`%${location}%`);
   }
   if (availability !== undefined && availability !== "") {
-    query += " AND availability = ?";
-    params.push(availability);
+    if (!isNaN(parseInt(availability))) {
+      query += " AND availability = ?";
+      params.push(parseInt(availability));
+    } else {
+      logger.warn(`Invalid availability filter value: ${availability}`);
+    }
   }
   if (pharmacy) {
     query += " AND pharmacy_name LIKE ?";
     params.push(`%${pharmacy}%`);
   }
-  if (category) { // Added category filter
+  if (category) {
     query += " AND category LIKE ?";
     params.push(`%${category}%`);
   }
@@ -441,7 +469,6 @@ app.get("/medicines/filter", async (req, res) => {
   try {
     const [results] = await db.execute(query, params);
     res.render("filtered_medicines.ejs", {
-      user: res.locals.user,
       medicines: results,
       filters: req.query,
     });
@@ -452,37 +479,40 @@ app.get("/medicines/filter", async (req, res) => {
 });
 
 // Signup handler
-app.post("/signup", async (req, res) => {
+app.post("/signup", [
+  body('name').trim().notEmpty().withMessage('Name is required.'),
+  body('email').isEmail().withMessage('Valid email is required.').normalizeEmail(),
+  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long.'),
+  body('role').isIn([ROLES.USER, ROLES.PHARMACY]).withMessage('Invalid role selected.')
+], async (req, res) => {
   logger.info("POST /signup");
-  const { name, email, password, role } = req.body;
-
-  if (!name || !email || !password || !role) {
-    return res.status(400).send("All fields are required for signup.");
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    logger.warn(`Validation errors on POST /signup: ${JSON.stringify(errors.array())}`);
+    return res.status(400).send(`Signup failed: ${errors.array().map(e => e.msg).join(', ')}`);
   }
 
-  try {
-    const hashedPassword = await bcrypt.hash(password, 10); // Use await for bcrypt.hash
+  const { name, email, password, role } = req.body;
 
-    if (role === "user") {
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    if (role === ROLES.USER) {
       await db.execute(
-        "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'user')",
-        [name, email, hashedPassword]
+        "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)",
+        [name, email, hashedPassword, ROLES.USER]
       );
       logger.info(`User ${email} signed up successfully`);
       res.redirect("/login");
-    } else if (role === "pharmacy") {
+    } else if (role === ROLES.PHARMACY) {
       await db.execute(
         "INSERT INTO pharmacies (name, email, password) VALUES (?, ?, ?)",
         [name, email, hashedPassword]
       );
       logger.info(`Pharmacy ${email} signed up successfully`);
       res.redirect("/login");
-    } else {
-      logger.error("Invalid role during signup attempt");
-      res.status(400).send("Invalid role specified.");
     }
   } catch (err) {
-    // Check for duplicate email error
     if (err.code === 'ER_DUP_ENTRY') {
       logger.warn(`Signup failed: Email ${email} already exists.`);
       return res.status(409).send("Email already registered. Please use a different email or log in.");
@@ -493,49 +523,60 @@ app.post("/signup", async (req, res) => {
 });
 
 // Login handler
-app.post("/login", async (req, res) => {
+app.post("/login", [
+  body('email').isEmail().withMessage('Valid email is required.').normalizeEmail(),
+  body('password').notEmpty().withMessage('Password is required.'),
+  body('role').isIn([ROLES.USER, ROLES.PHARMACY, ROLES.ADMIN]).withMessage('Invalid role selected.')
+], async (req, res) => {
   logger.info("POST /login");
-  const { email, password, role } = req.body;
-
-  if (!email || !password || !role) {
-    return res.status(400).send("Email, password, and role are required for login.");
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    logger.warn(`Validation errors on POST /login: ${JSON.stringify(errors.array())}`);
+    return res.status(400).send(`Login failed: ${errors.array().map(e => e.msg).join(', ')}`);
   }
 
+  const { email, password, role } = req.body;
+
   try {
-    if (role === "user") {
-      const [results] = await db.execute("SELECT * FROM users WHERE email = ?", [email]);
-      if (results.length === 0) {
-        logger.warn(`Login failed for user ${email}: Invalid credentials (email not found)`);
-        return res.status(401).send("Invalid credentials.");
-      }
-      const user = results[0];
-      if (await bcrypt.compare(password, user.password)) { // Use await for bcrypt.compare
-        logger.info(`User ${email} logged in successfully`);
-        req.session.user = { id: user.id, name: user.username, email: user.email, role: user.role };
-        res.redirect("/dashboard");
-      } else {
-        logger.warn(`Login failed for user ${email}: Invalid password`);
-        res.status(401).send("Invalid password.");
-      }
-    } else if (role === "pharmacy") {
-      const [results] = await db.execute("SELECT * FROM pharmacies WHERE email = ?", [email]);
-      if (results.length === 0) {
-        logger.warn(`Login failed for pharmacy ${email}: Invalid credentials (email not found)`);
-        return res.status(401).send("Invalid credentials.");
-      }
-      const pharmacy = results[0];
-      if (await bcrypt.compare(password, pharmacy.password)) { // Use await for bcrypt.compare
-        logger.info(`Pharmacy ${email} logged in successfully`);
-        // Crucially, add the role to the session object for pharmacies
-        req.session.user = { id: pharmacy.id, name: pharmacy.name, email: pharmacy.email, role: "pharmacy" };
-        res.redirect("/pharmacy/dashboard");
-      } else {
-        logger.warn(`Login failed for pharmacy ${email}: Invalid password`);
-        res.status(401).send("Invalid password.");
-      }
+    let userTable, redirectTo;
+    if (role === ROLES.USER || role === ROLES.ADMIN) { // Admin logs in through users table
+      userTable = "users";
+      redirectTo = "/dashboard";
+    } else if (role === ROLES.PHARMACY) {
+      userTable = "pharmacies";
+      redirectTo = "/pharmacy/dashboard";
     } else {
-      logger.error(`Login failed: Invalid role '${role}'`);
-      res.status(400).send("Invalid role specified.");
+      logger.error(`Login failed: Invalid role '${role}' (should be caught by validator)`);
+      return res.status(400).send("Invalid role specified.");
+    }
+
+    const [results] = await db.execute(`SELECT * FROM ${userTable} WHERE email = ?`, [email]);
+
+    if (results.length === 0) {
+      logger.warn(`Login failed for ${role} ${email}: Invalid credentials (email not found)`);
+      return res.status(401).send("Invalid credentials.");
+    }
+
+    const user = results[0];
+
+    // Additional check for admin role from users table
+    if (role === ROLES.ADMIN && user.role !== ROLES.ADMIN) {
+        logger.warn(`Login failed: User ${email} tried to log in as ADMIN but has role ${user.role}`);
+        return res.status(401).send("Invalid credentials or role.");
+    }
+
+    if (await bcrypt.compare(password, user.password)) {
+      logger.info(`${role} ${email} logged in successfully`);
+      req.session.user = {
+        id: user.id,
+        name: user.username || user.name, // 'username' for users, 'name' for pharmacies
+        email: user.email,
+        role: user.role || role // Use role from DB for users, or from form for pharmacies
+      };
+      res.redirect(redirectTo);
+    } else {
+      logger.warn(`Login failed for ${role} ${email}: Invalid password`);
+      res.status(401).send("Invalid password.");
     }
   } catch (err) {
     logger.error("Error during login", err);
@@ -544,13 +585,8 @@ app.post("/login", async (req, res) => {
 });
 
 // Pharmacy dashboard
-app.get("/pharmacy/dashboard", async (req, res) => {
+app.get("/pharmacy/dashboard", isAuthenticated, authorizeRole(ROLES.PHARMACY), async (req, res) => {
   logger.info("GET /pharmacy/dashboard");
-
-  if (!req.session.user || req.session.user.role !== "pharmacy") {
-    logger.warn("Unauthorized access to pharmacy dashboard");
-    return res.redirect("/login");
-  }
 
   try {
     const [medicines] = await db.execute(
@@ -558,21 +594,21 @@ app.get("/pharmacy/dashboard", async (req, res) => {
       [req.session.user.id]
     );
 
+    // Re-added order counts for pharmacy dashboard
     const [pendingOrders] = await db.execute(
       `SELECT COUNT(*) AS count FROM orders o JOIN medicines m ON o.medicine_id = m.id WHERE m.pharmacy_id = ? AND o.status = 'pending'`,
       [req.session.user.id]
     );
-
     const [totalOrders] = await db.execute(
       `SELECT COUNT(*) AS count FROM orders o JOIN medicines m ON o.medicine_id = m.id WHERE m.pharmacy_id = ?`,
       [req.session.user.id]
     );
 
     res.render("pharmacy_dashboard.ejs", {
-      pharmacy: req.session.user, // Renamed to pharmacy for clarity in EJS
+      pharmacy: req.session.user,
       medicines: medicines,
-      pendingOrderCount: pendingOrders[0].count,
-      totalOrderCount: totalOrders[0].count,
+      pendingOrderCount: pendingOrders[0].count, // Re-added
+      totalOrderCount: totalOrders[0].count,   // Re-added
     });
   } catch (err) {
     logger.error("DB error on pharmacy dashboard", err);
@@ -581,21 +617,23 @@ app.get("/pharmacy/dashboard", async (req, res) => {
 });
 
 // Add medicine (pharmacy)
-app.post("/pharmacy_add_medicines", async (req, res) => {
+app.post("/pharmacy_add_medicines", isAuthenticated, authorizeRole(ROLES.PHARMACY), [
+  body('name').trim().notEmpty().withMessage('Medicine name is required.'),
+  body('location').trim().notEmpty().withMessage('Location is required.'),
+  body('availability').isInt({ min: 0 }).withMessage('Availability must be a non-negative integer.'),
+  body('category').trim().notEmpty().withMessage('Category is required.')
+], async (req, res) => {
   logger.info("POST /pharmacy_add_medicines");
 
-  if (!req.session.user || req.session.user.role !== "pharmacy") {
-    logger.warn("Unauthorized attempt to add medicine");
-    return res.redirect("/login");
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    logger.warn(`Validation errors on POST /pharmacy_add_medicines: ${JSON.stringify(errors.array())}`);
+    return res.status(400).send(`Failed to add medicine: ${errors.array().map(e => e.msg).join(', ')}`);
   }
 
-  const { name, location, availability, category } = req.body; // Added category
+  const { name, location, availability, category } = req.body;
   const pharmacyId = req.session.user.id;
   const pharmacyName = req.session.user.name;
-
-  if (!name || !location || !availability || !category) {
-    return res.status(400).send("All medicine fields are required.");
-  }
 
   try {
     await db.execute(
@@ -609,15 +647,10 @@ app.post("/pharmacy_add_medicines", async (req, res) => {
     res.status(500).send("Failed to add medicine");
   }
 });
-// Pharmacy Delete Medicine (ensure this is present in server.js)
-app.post("/pharmacy/medicines/:id/delete", async (req, res) => {
-  logger.info(`POST /pharmacy/medicines/${req.params.id}/delete`);
 
-  // Ensure it's a pharmacy user and they own the medicine
-  if (!req.session.user || req.session.user.role !== "pharmacy") {
-    logger.warn("Access denied to pharmacy delete medicine");
-    return res.status(403).send("Access denied");
-  }
+// Pharmacy Delete Medicine (POST for security)
+app.post("/pharmacy/medicines/:id/delete", isAuthenticated, authorizeRole(ROLES.PHARMACY), async (req, res) => {
+  logger.info(`POST /pharmacy/medicines/${req.params.id}/delete`);
 
   const { id } = req.params; // Medicine ID
 
@@ -641,6 +674,7 @@ app.post("/pharmacy/medicines/:id/delete", async (req, res) => {
     res.status(500).send("Failed to delete medicine");
   }
 });
+
 // Logout route
 app.get("/logout", (req, res) => {
   logger.info("GET /logout");
@@ -654,7 +688,7 @@ app.get("/logout", (req, res) => {
   });
 });
 
-// Test POST route (for debugging)
+// Test POST route (for debugging) - kept for your utility
 app.post("/testpost", (req, res) => {
   logger.info("Received POST /testpost with body: " + JSON.stringify(req.body));
   res.send("POST /testpost received");
@@ -663,18 +697,28 @@ app.post("/testpost", (req, res) => {
 // 404 handler
 app.use((req, res) => {
   logger.warn(`404 Not Found: ${req.originalUrl}`);
-  res.status(404).render("404.ejs", { user: res.locals.user }); // Render a 404 page if you have one
+  res.status(404).render("404.ejs"); // Render a 404 page if you have one
 });
 
 // Global error handler
 app.use((err, req, res, next) => {
   logger.error("Unexpected error", err);
-  res.status(500).render("500.ejs", { user: res.locals.user }); // Render a 500 page if you have one
+  // In production, avoid sending detailed error messages to the client
+  res.status(500).render("500.ejs", { error: process.env.NODE_ENV === 'production' ? null : err.message });
 });
 
-// Start server
+// --- Start Server Function ---
+async function startServer() {
+  try {
+    db = await initDb(); // Initialize the global db connection
 
+    app.listen(PORT, () => {
+      logger.info(`Server started on http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    logger.error("Failed to start server due to database connection error.", err);
+    process.exit(1); // Exit if DB connection fails at startup
+  }
+}
 
-app.listen(PORT, () => {
-  logger.info(`Server started on http://localhost:${PORT}`);
-});
+startServer(); // Call the function to start the application

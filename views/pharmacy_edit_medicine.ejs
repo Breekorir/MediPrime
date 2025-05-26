@@ -3,171 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Medicines - MediPrime Pharmacy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Manage Medicines - MediPrime</title>
+    <link rel="stylesheet" href="/css/styles.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #333;
-        }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .header {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
         }
-        .nav-link {
-            color: #4f46e5;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s;
-        }
-        .nav-link:hover {
-            background-color: #e0e7ff;
-        }
-        .medicine-card {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
+        .add-medicine-link {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #4b5563;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #d1d5db;
-            border-radius: 0.5rem;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-            transition: border-color 0.2s;
-        }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #6366f1; /* indigo-500 */
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-            border-radius: 0.5rem;
-            cursor: pointer;
+            width: fit-content;
+            margin: 0 auto 30px;
+            padding: 12px 25px;
+            background-color: #28a745; /* Green for add button */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
             transition: background-color 0.3s ease;
         }
-        .btn-primary {
-            background-color: #4f46e5; /* indigo-600 */
-            color: #ffffff;
+        .add-medicine-link:hover {
+            background-color: #218838;
+        }
+        .medicine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .medicine-card {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+        .medicine-card:hover {
+            transform: translateY(-5px);
+        }
+        .medicine-card h3 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .medicine-card label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .medicine-card input[type="text"],
+        .medicine-card input[type="number"] {
+            width: calc(100% - 22px); /* Account for padding and border */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .medicine-card .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .medicine-card button {
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        .btn-primary:hover {
-            background-color: #4338ca; /* indigo-700 */
+        .medicine-card button[type="submit"] {
+            background-color: #007bff;
+            color: white;
         }
-        .btn-danger {
-            background-color: #ef4444; /* red-500 */
-            color: #ffffff;
-            border: none;
+        .medicine-card button[type="submit"]:hover {
+            background-color: #0056b3;
         }
-        .btn-danger:hover {
-            background-color: #dc2626; /* red-600 */
+        .medicine-card .delete-button {
+            background-color: #dc3545; /* Red for delete */
+            color: white;
+        }
+        .medicine-card .delete-button:hover {
+            background-color: #c82333;
+        }
+        .no-medicines {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            padding: 50px;
+            border: 1px dashed #ddd;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .medicine-grid {
+                grid-template-columns: 1fr; /* Stack cards on small screens */
+            }
+            .medicine-card input[type="text"],
+            .medicine-card input[type="number"] {
+                width: calc(100% - 20px); /* Adjust width for smaller padding */
+            }
+            .medicine-card .button-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .medicine-card button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <%- include("_header.ejs") %>
+
     <div class="container">
-        <header class="header">
-            <h1 class="text-3xl font-bold text-gray-800">Edit My Medicines</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <% if (user) { %>
-                        <% if (user.role === 'pharmacy') { %>
-                            <li><a href="/pharmacy/dashboard" class="nav-link">Dashboard</a></li>
-                            <li><a href="/pharmacy_add_medicine" class="nav-link">Add Medicine</a></li>
-                            <li><a href="/pharmacy_edit_medicines" class="nav-link bg-indigo-100">Edit Medicines</a></li>
-                            <li><a href="/pharmacy_orders" class="nav-link">Orders</a></li>
-                        <% } else if (user.role === 'admin') { %>
-                            <li><a href="/dashboard" class="nav-link">Admin Dashboard</a></li>
-                            <li><a href="/admin/medicines" class="nav-link">Manage All Medicines</a></li>
-                        <% } else { %>
-                             <li><a href="/findMedicine" class="nav-link">Find Medicine</a></li>
-                             <li><a href="/order" class="nav-link">My Orders</a></li>
-                        <% } %>
-                        <li><a href="/logout" class="nav-link">Logout</a></li>
-                    <% } else { %>
-                        <li><a href="/login" class="nav-link">Login</a></li>
-                        <li><a href="/signup" class="nav-link">Signup</a></li>
-                    <% } %>
-                </ul>
-            </nav>
-        </header>
+        <h1>Manage Your Medicines</h1>
 
-        <main class="py-6">
-            <h2 class="text-2xl font-semibold text-gray-700 mb-6">Manage Your Inventory</h2>
+        <a href="/pharmacy_add_medicine" class="add-medicine-link">Add New Medicine</a>
 
-            <% if (medicines && medicines.length > 0) { %>
-                <% medicines.forEach(medicine => { %>
+        <% if (medicines && medicines.length > 0) { %>
+            <div class="medicine-grid">
+                <% medicines.forEach(med => { %>
                     <div class="medicine-card">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4"><%= medicine.name %></h3>
-                        <form action="/pharmacy/medicines/<%= medicine.id %>/edit" method="POST">
-                            <input type="hidden" name="id" value="<%= medicine.id %>">
-                            
-                            <div class="form-group">
-                                <label for="name_<%= medicine.id %>">Medicine Name:</label>
-                                <input type="text" id="name_<%= medicine.id %>" name="name" value="<%= medicine.name %>" required />
-                            </div>
+                        <h3><%= med.name %></h3>
+                        <form action="/pharmacy/medicines/<%= med.id %>/edit" method="POST">
+                            <label for="name_<%= med.id %>">Medicine Name:</label>
+                            <input type="text" id="name_<%= med.id %>" name="name" value="<%= med.name %>" required>
 
-                            <div class="form-group">
-                                <label for="category_<%= medicine.id %>">Category:</label>
-                                <input type="text" id="category_<%= medicine.id %>" name="category" value="<%= medicine.category %>" required />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="location_<%= medicine.id %>">Location:</label>
-                                <input type="text" id="location_<%= medicine.id %>" name="location" value="<%= medicine.location %>" required />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="availability_<%= medicine.id %>">Availability:</label>
-                                <input type="number" id="availability_<%= medicine.id %>" name="availability" value="<%= medicine.availability %>" required min="0" />
-                            </div>
-                            
-                            <div class="flex space-x-4 mt-6">
-                                <button type="submit" class="btn btn-primary">Update Medicine</button>
-                                <form action="/pharmacy/medicines/<%= medicine.id %>/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this medicine?');">
-                                    <button type="submit" class="btn btn-danger">Delete Medicine</button>
-                                </form>
+                            <label for="location_<%= med.id %>">Location:</label>
+                            <input type="text" id="location_<%= med.id %>" name="location" value="<%= med.location %>" required>
+
+                            <label for="availability_<%= med.id %>">Availability:</label>
+                            <input type="number" id="availability_<%= med.id %>" name="availability" value="<%= med.availability %>" min="0" required>
+
+                            <label for="category_<%= med.id %>">Category:</label>
+                            <input type="text" id="category_<%= med.id %>" name="category" value="<%= med.category %>" required>
+
+                            <div class="button-group">
+                                <button type="submit">Update Medicine</button>
+                                <button type="button" class="delete-button" onclick="confirmDelete('<%= med.id %>', '<%= med.name %>')">Delete</button>
                             </div>
                         </form>
                     </div>
                 <% }) %>
-            <% } else { %>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <p class="text-gray-600 text-lg">You have no medicines added yet. Go to the "Add Medicine" page to add some!</p>
-                    <a href="/pharmacy_add_medicine" class="inline-block mt-4 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
-                        Add New Medicine
-                    </a>
-                </div>
-            <% } %>
-        </main>
+            </div>
+        <% } else { %>
+            <p class="no-medicines">You haven't added any medicines yet. Click "Add New Medicine" to get started!</p>
+        <% } %>
     </div>
+
+    <script>
+        function confirmDelete(medicineId, medicineName) {
+            if (confirm(`Are you sure you want to delete "${medicineName}"? This action cannot be undone.`)) {
+                // Create a temporary form to submit the DELETE request
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = `/pharmacy/medicines/${medicineId}/delete`;
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+    </script>
+
 </body>
 </html>

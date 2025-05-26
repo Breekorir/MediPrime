@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 Forbidden - MediPrime</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+        h1 {
+            color: #dc3545; /* Red color for error */
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>403 Forbidden</h1>
+        <p><%= message || "You do not have permission to access this page." %></p>
+        <a href="/">Go to Homepage</a>
+        <% if (user) { %>
+            <% if (user.role === 'user') { %>
+                <a href="/dashboard" style="margin-left: 10px;">Go to Dashboard</a>
+            <% } else if (user.role === 'pharmacy') { %>
+                <a href="/pharmacy/dashboard" style="margin-left: 10px;">Go to Pharmacy Dashboard</a>
+            <% } else if (user.role === 'admin') { %>
+                <a href="/dashboard" style="margin-left: 10px;">Go to Admin Dashboard</a>
+            <% } %>
+        <% } %>
+    </div>
+</html>

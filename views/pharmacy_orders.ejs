@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharmacy Orders - MediPrime</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #555;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .status-pending { color: orange; font-weight: bold; }
+    .status-completed { color: green; font-weight: bold; }
+    .status-cancelled { color: red; font-weight: bold; }
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .back-link {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-link:hover {
+      background-color: #0056b3;
+    }
+    form {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+    form select {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    form button {
+      padding: 8px 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr { border: 1px solid #ccc; margin-bottom: 15px; border-radius: 8px; overflow: hidden; }
+      td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+      td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #333;
+      }
+      td:nth-of-type(1):before { content: "Order ID:"; }
+      td:nth-of-type(2):before { content: "Medicine:"; }
+      td:nth-of-type(3):before { content: "Buyer Name:"; }
+      td:nth-of-type(4):before { content: "Buyer Email:"; }
+      td:nth-of-type(5):before { content: "Quantity:"; }
+      td:nth-of-type(6):before { content: "Status:"; }
+      td:nth-of-type(7):before { content: "Ordered At:"; }
+      td:nth-of-type(8):before { content: "Action:"; }
+      form {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      form select, form button {
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <%- include("_header.ejs") %>
+
+  <div class="container">
+    <h1>Orders for Your Pharmacy</h1>
+
+    <% if (orders && orders.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Medicine</th>
+            <th>Buyer Name</th>
+            <th>Buyer Email</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Ordered At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% orders.forEach(order => { %>
+            <tr>
+              <td><%= order.id %></td>
+              <td><%= order.medicine_name %></td>
+              <td><%= order.buyer_name %></td>
+              <td><%= order.buyer_email %></td>
+              <td><%= order.quantity %></td>
+              <td>
+                <span class="status-<%= order.status %>">
+                  <%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %>
+                </span>
+              </td>
+              <td><%= new Date(order.created_at).toLocaleString() %></td>
+              <td>
+                <form action="/pharmacy_orders/update" method="POST">
+                  <input type="hidden" name="order_id" value="<%= order.id %>">
+                  <select name="new_status">
+                    <option value="pending" <%= order.status === 'pending' ? 'selected' : '' %>>Pending</option>
+                    <option value="completed" <%= order.status === 'completed' ? 'selected' : '' %>>Completed</option>
+                    <option value="cancelled" <%= order.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
+                  </select>
+                  <button type="submit">Update</button>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No orders for your pharmacy yet.</p>
+    <% } %>
+
+    <a href="/pharmacy/dashboard" class="back-link">Back to Dashboard</a>
+  </div>
+
+</body>
+</html>

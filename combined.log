@@ -814,3 +814,607 @@
 {"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-23T10:12:44.446Z"}
 {"level":"info","message":"GET /findMedicine","timestamp":"2025-05-23T10:12:46.142Z"}
 {"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-23T10:12:46.191Z"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T07:16:57.875Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Database connection failed","stack":"Error\n    at Object.createConnectionPromise [as createConnection] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\promise.js:19:31)\n    at initDb (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:26:26)\n    at Object.<anonymous> (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:65:1)\n    at Module._compile (node:internal/modules/cjs/loader:1554:14)\n    at Object..js (node:internal/modules/cjs/loader:1706:10)\n    at Module.load (node:internal/modules/cjs/loader:1289:32)\n    at Function._load (node:internal/modules/cjs/loader:1108:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)","timestamp":"2025-05-26T07:16:57.947Z"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T07:17:00.111Z"}
+{"code":"ECONNREFUSED","level":"error","message":"Database connection failed","stack":"Error\n    at Object.createConnectionPromise [as createConnection] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\promise.js:19:31)\n    at initDb (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:26:26)\n    at Object.<anonymous> (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:65:1)\n    at Module._compile (node:internal/modules/cjs/loader:1554:14)\n    at Object..js (node:internal/modules/cjs/loader:1706:10)\n    at Module.load (node:internal/modules/cjs/loader:1289:32)\n    at Function._load (node:internal/modules/cjs/loader:1108:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)","timestamp":"2025-05-26T07:17:00.190Z"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T07:17:49.946Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T07:17:50.112Z"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T07:17:53.399Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T07:17:53.680Z"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T07:18:17.218Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:18:17.428Z"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T07:18:19.374Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T07:18:19.490Z"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-26T07:18:19.558Z"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T07:18:27.628Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:18:27.796Z"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T07:18:41.946Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:18:42.016Z"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T07:18:58.205Z"}
+{"level":"info","message":"User brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T07:18:58.375Z"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T07:18:58.396Z"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T07:18:58.407Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:18:58.468Z"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T07:19:16.268Z"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T07:19:20.390Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:19:20.430Z"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T07:21:57.620Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:21:57.657Z"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T07:22:00.384Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:22:00.417Z"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T07:22:09.889Z"}
+{"level":"info","message":"User brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T07:22:10.030Z"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T07:22:10.039Z"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T07:22:10.046Z"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T07:22:10.101Z"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T07:22:14.790Z"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T07:32:51.125Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T07:32:51.164Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T10:37:37.395+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T10:37:37.403+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T10:37:38.493+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T10:37:38.501+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:37:54.405+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:37:54.446+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:37:56.761+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:37:56.788+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:37:59.005+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:37:59.032+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:37:59.225+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:37:59.259+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:37:59.464+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:37:59.521+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T10:38:02.722+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:38:02.746+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T10:38:18.061+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T10:38:18.147+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T10:38:18.155+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T10:38:18.160+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:38:18.192+03:00"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T10:38:22.521+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:38:26.433+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:38:26.453+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:41:37.495+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:41:37.515+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:41:37.913+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:41:37.964+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T10:41:42.626+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:41:42.664+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T10:41:55.956+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T10:41:56.044+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T10:41:56.049+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T10:41:56.053+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:41:56.083+03:00"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T10:41:59.391+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:43:49.715+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:43:49.797+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T10:52:26.781+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:52:26.937+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T10:52:51.837+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T10:52:51.860+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T10:52:51.897+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\dashboard.ejs:22\n    20| \r\n    21|     <div class=\"medicine-results\">\r\n >> 22|       <% if (medicines && medicines.length > 0) { %>\r\n    23|         <ul>\r\n    24|           <% medicines.forEach(medicine => { %>\r\n    25|             <li>\r\n\nmedicines is not defined","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\dashboard.ejs","stack":"ReferenceError: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\dashboard.ejs:22\n    20| \r\n    21|     <div class=\"medicine-results\">\r\n >> 22|       <% if (medicines && medicines.length > 0) { %>\r\n    23|         <ul>\r\n    24|           <% medicines.forEach(medicine => { %>\r\n    25|             <li>\r\n\nmedicines is not defined\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\dashboard.ejs\":18:8)\n    at dashboard (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)\n    at ServerResponse.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\response.js:909:7)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:191:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-05-26T10:52:52.015+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:52:54.747+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:52:54.852+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T10:55:53.026+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T10:55:53.040+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T10:56:07.954+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:56:08.115+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T10:56:19.585+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T10:56:19.659+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T10:56:19.712+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:56:19.803+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T10:56:42.899+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:56:43.076+03:00"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T10:56:51.673+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T10:56:53.417+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T10:56:53.558+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:00:19.068+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:00:19.095+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:00:29.750+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:00:29.819+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T11:00:31.992+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:00:32.149+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T11:00:43.013+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T11:00:43.290+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:00:43.310+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:00:43.324+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:00:43.419+03:00"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T11:00:46.805+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:00:48.797+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:00:48.925+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:03:13.410+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:03:13.567+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T11:03:15.736+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:03:15.901+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T11:03:26.800+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T11:03:27.103+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:03:27.112+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:03:27.121+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:03:27.208+03:00"}
+{"level":"warn","message":"404 Not Found: /order","timestamp":"2025-05-26T11:03:30.512+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:11:39.554+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:11:39.569+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:23:49.702+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:23:49.823+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:23:53.673+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:23:53.690+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:23:53.727+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:23:53.810+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:23:56.131+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:23:56.149+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:23:56.237+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\findMedicine.ejs:305\n    303|     }\r\n    304|   </script>\r\n >> 305|   <%- include(\"partials/footer.ejs\") %>\r\n    306| </body>\r\n    307| </html>\r\n    308| \n\nCould not find the include file \"partials/footer.ejs\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\findMedicine.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\findMedicine.ejs:305\n    303|     }\r\n    304|   </script>\r\n >> 305|   <%- include(\"partials/footer.ejs\") %>\r\n    306| </body>\r\n    307| </html>\r\n    308| \n\nCould not find the include file \"partials/footer.ejs\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\findMedicine.ejs\":107:17)\n    at findMedicine (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T11:23:56.289+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:24:01.415+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:24:01.557+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:24:49.937+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:24:49.954+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:24:57.632+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:24:57.829+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:25:00.102+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:25:00.253+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T11:25:30.364+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:25:30.512+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T11:25:40.389+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T11:25:40.675+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:25:40.689+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:25:40.699+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:25:40.773+03:00"}
+{"level":"info","message":"User 3 (role: user) ordered medicine 4 quantity 1","timestamp":"2025-05-26T11:25:48.383+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:25:48.416+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:25:48.448+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:25:48.534+03:00"}
+{"level":"info","message":"User 3 (role: user) ordered medicine 5 quantity 1","timestamp":"2025-05-26T11:27:46.437+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:27:46.466+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:27:46.516+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:27:46.615+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:31:59.174+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:31:59.192+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:32:04.778+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:32:04.919+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T11:34:14.182+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:34:14.337+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T11:34:43.902+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T11:34:44.199+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:34:44.216+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:34:44.230+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:34:44.307+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:44:09.319+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:44:09.486+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T11:44:13.317+03:00"}
+{"code":"ER_BAD_FIELD_ERROR","errno":1054,"level":"error","message":"Database error in /orders route Unknown column 'o.created_at' in 'field list'","sql":"\n      SELECT o.id, o.quantity, o.status, o.created_at,\n             m.name AS medicine_name, m.category AS medicine_category, -- Added medicine category\n             p.name AS pharmacy_name, p.address AS pharmacy_address, p.email AS pharmacy_email, p.phone AS pharmacy_phone -- Added pharmacy address and phone\n      FROM orders o\n      JOIN medicines m ON o.medicine_id = m.id\n      JOIN pharmacies p ON m.pharmacy_id = p.id\n      WHERE o.user_id = ?\n      ORDER BY o.created_at DESC\n    ","sqlMessage":"Unknown column 'o.created_at' in 'field list'","sqlState":"42S22","stack":"Error: Unknown column 'o.created_at' in 'field list'\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:230:31\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:108:5\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at isAuthenticated (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:90:3)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)","timestamp":"2025-05-26T11:44:13.330+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T11:48:14.847+03:00"}
+{"code":"ER_BAD_FIELD_ERROR","errno":1054,"level":"error","message":"Database error in /orders route Unknown column 'p.address' in 'field list'","sql":"\n      SELECT o.id, o.quantity, o.status, o.created_at,\n             m.name AS medicine_name, m.category AS medicine_category, -- Added medicine category\n             p.name AS pharmacy_name, p.address AS pharmacy_address, p.email AS pharmacy_email, p.phone AS pharmacy_phone -- Added pharmacy address and phone\n      FROM orders o\n      JOIN medicines m ON o.medicine_id = m.id\n      JOIN pharmacies p ON m.pharmacy_id = p.id\n      WHERE o.user_id = ?\n      ORDER BY o.created_at DESC\n    ","sqlMessage":"Unknown column 'p.address' in 'field list'","sqlState":"42S22","stack":"Error: Unknown column 'p.address' in 'field list'\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:230:31\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:108:5\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at isAuthenticated (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:90:3)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)","timestamp":"2025-05-26T11:48:14.855+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T11:48:21.580+03:00"}
+{"code":"ER_BAD_FIELD_ERROR","errno":1054,"level":"error","message":"Database error in /orders route Unknown column 'p.address' in 'field list'","sql":"\n      SELECT o.id, o.quantity, o.status, o.created_at,\n             m.name AS medicine_name, m.category AS medicine_category, -- Added medicine category\n             p.name AS pharmacy_name, p.address AS pharmacy_address, p.email AS pharmacy_email, p.phone AS pharmacy_phone -- Added pharmacy address and phone\n      FROM orders o\n      JOIN medicines m ON o.medicine_id = m.id\n      JOIN pharmacies p ON m.pharmacy_id = p.id\n      WHERE o.user_id = ?\n      ORDER BY o.created_at DESC\n    ","sqlMessage":"Unknown column 'p.address' in 'field list'","sqlState":"42S22","stack":"Error: Unknown column 'p.address' in 'field list'\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:230:31\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:108:5\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at isAuthenticated (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:90:3)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)","timestamp":"2025-05-26T11:48:21.584+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T11:48:23.674+03:00"}
+{"code":"ER_BAD_FIELD_ERROR","errno":1054,"level":"error","message":"Database error in /orders route Unknown column 'p.address' in 'field list'","sql":"\n      SELECT o.id, o.quantity, o.status, o.created_at,\n             m.name AS medicine_name, m.category AS medicine_category, -- Added medicine category\n             p.name AS pharmacy_name, p.address AS pharmacy_address, p.email AS pharmacy_email, p.phone AS pharmacy_phone -- Added pharmacy address and phone\n      FROM orders o\n      JOIN medicines m ON o.medicine_id = m.id\n      JOIN pharmacies p ON m.pharmacy_id = p.id\n      WHERE o.user_id = ?\n      ORDER BY o.created_at DESC\n    ","sqlMessage":"Unknown column 'p.address' in 'field list'","sqlState":"42S22","stack":"Error: Unknown column 'p.address' in 'field list'\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:230:31\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:108:5\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at isAuthenticated (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:90:3)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)","timestamp":"2025-05-26T11:48:23.681+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:48:51.547+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:48:51.564+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:48:54.214+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:48:54.228+03:00"}
+{"level":"warn","message":"Unauthorized access attempt to /orders","timestamp":"2025-05-26T11:49:00.270+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T11:49:00.357+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:49:00.541+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T11:49:11.664+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T11:49:11.945+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T11:49:11.959+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:49:11.970+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:49:12.063+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T11:49:19.558+03:00"}
+{"code":"ER_BAD_FIELD_ERROR","errno":1054,"level":"error","message":"Database error in /orders route Unknown column 'p.address' in 'field list'","sql":"\n      SELECT o.id, o.quantity, o.status, o.created_at,\n             m.name AS medicine_name, m.category AS medicine_category, -- Added medicine category\n             p.name AS pharmacy_name, p.address AS pharmacy_address, p.email AS pharmacy_email, p.phone AS pharmacy_phone -- Added pharmacy address and phone\n      FROM orders o\n      JOIN medicines m ON o.medicine_id = m.id\n      JOIN pharmacies p ON m.pharmacy_id = p.id\n      WHERE o.user_id = ?\n      ORDER BY o.created_at DESC\n    ","sqlMessage":"Unknown column 'p.address' in 'field list'","sqlState":"42S22","stack":"Error: Unknown column 'p.address' in 'field list'\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:230:31\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:108:5\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at isAuthenticated (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:90:3)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)","timestamp":"2025-05-26T11:49:19.572+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T11:58:07.481+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T11:58:07.491+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:58:19.693+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:58:19.828+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:58:22.468+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:58:22.609+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T11:58:22.671+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:58:22.725+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T11:58:26.094+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:58:26.232+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T11:58:41.126+03:00"}
+{"level":"info","message":"pharmacy alice@company.com logged in successfully","timestamp":"2025-05-26T11:58:41.578+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T11:58:41.621+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T11:58:41.733+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\pharmacy_orders.ejs:198\n    196|   </div>\r\n    197| \r\n >> 198|   <%- include(\"partials/footer.ejs\") %>\r\n    199| </body>\r\n    200| </html>\r\n    201| \n\nCould not find the include file \"partials/footer.ejs\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\pharmacy_orders.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\pharmacy_orders.ejs:198\n    196|   </div>\r\n    197| \r\n >> 198|   <%- include(\"partials/footer.ejs\") %>\r\n    199| </body>\r\n    200| </html>\r\n    201| \n\nCould not find the include file \"partials/footer.ejs\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\pharmacy_orders.ejs\":66:17)\n    at pharmacy_orders (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T11:58:44.879+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T11:58:48.171+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T11:58:48.306+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:01:02.777+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:01:02.796+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:02:27.687+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:02:27.757+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:02:40.309+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:02:40.386+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:02:51.121+03:00"}
+{"level":"info","message":"pharmacy alice@company.com logged in successfully","timestamp":"2025-05-26T12:02:51.444+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T12:02:51.472+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T12:02:51.601+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T12:02:58.499+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T12:02:58.664+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-26T12:03:05.541+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:03:05.578+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:03:05.712+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:03:09.378+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:03:09.544+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:03:21.877+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T12:03:22.216+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:03:22.227+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:03:22.237+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:03:22.315+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T12:03:25.449+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T12:03:25.464+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\user_orders.ejs:160\n    158|   </div>\r\n    159| \r\n >> 160|   <%- include(\"partials/footer.ejs\") %>\r\n    161| </body>\r\n    162| </html>\r\n    163| \n\nCould not find the include file \"partials/footer.ejs\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\user_orders.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\user_orders.ejs:160\n    158|   </div>\r\n    159| \r\n >> 160|   <%- include(\"partials/footer.ejs\") %>\r\n    161| </body>\r\n    162| </html>\r\n    163| \n\nCould not find the include file \"partials/footer.ejs\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\user_orders.ejs\":60:17)\n    at user_orders (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T12:03:25.499+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:03:28.835+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:03:29.006+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:04:48.997+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:04:49.013+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:04:54.166+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:04:54.260+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:04:56.475+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:04:56.646+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:05:09.206+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T12:05:09.550+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:05:09.575+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:05:09.591+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:09.700+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T12:05:12.671+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T12:05:12.687+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:12.876+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:05:16.243+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:16.406+03:00"}
+{"level":"info","message":"User 3 (role: user) ordered medicine 24 quantity 1","timestamp":"2025-05-26T12:05:22.509+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:05:22.532+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:05:22.566+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:22.679+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T12:05:24.527+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T12:05:24.540+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:24.985+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:05:44.093+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:05:44.136+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:44.309+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-26T12:05:49.587+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:05:49.618+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:49.754+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:05:52.058+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:05:52.217+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:06:00.877+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:06:01.049+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:08:22.419+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T12:08:22.438+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:08:22.481+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:08:22.630+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /orders","timestamp":"2025-05-26T12:08:28.004+03:00"}
+{"level":"error","message":"Unexpected error Failed to lookup view \"403.ejs\" in views directory \"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\"","stack":"Error: Failed to lookup view \"403.ejs\" in views directory \"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\"\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:562:17)\n    at ServerResponse.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\response.js:909:7)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:106:30\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at isAuthenticated (C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:90:3)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:435:11)","timestamp":"2025-05-26T12:08:28.014+03:00","view":{"defaultEngine":"ejs","ext":".ejs","name":"403.ejs","root":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views"}}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:08:31.645+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:08:31.757+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:10:23.851+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:10:23.868+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:10:28.830+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:10:28.972+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:10:42.328+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T12:10:42.401+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:10:42.429+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:10:42.535+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /pharmacy_orders","timestamp":"2025-05-26T12:10:49.139+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\403.ejs:68\n    66|         <% } %>\r\n    67|     </div>\r\n >> 68|     <%- include(\"partials/footer.ejs\") %> </body>\r\n    69| </html>\n\nCould not find the include file \"partials/footer.ejs\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\403.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\403.ejs:68\n    66|         <% } %>\r\n    67|     </div>\r\n >> 68|     <%- include(\"partials/footer.ejs\") %> </body>\r\n    69| </html>\n\nCould not find the include file \"partials/footer.ejs\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\403.ejs\":33:17)\n    at 403 (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T12:10:49.162+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:10:52.471+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:10:52.622+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:18:23.284+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:18:23.300+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:18:26.782+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:18:26.798+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:18:31.042+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:18:31.244+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:18:43.203+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T12:18:43.277+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:18:43.355+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:18:43.481+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /orders","timestamp":"2025-05-26T12:18:52.628+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:18:52.798+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:18:57.214+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:18:57.388+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /pharmacy_orders","timestamp":"2025-05-26T12:18:59.005+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:18:59.145+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:19:01.205+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:19:01.377+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:20:00.730+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:20:00.747+03:00"}
+{"level":"warn","message":"Unauthorized access attempt to /admin/medicines","timestamp":"2025-05-26T12:20:18.093+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:20:18.171+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:18.356+03:00"}
+{"level":"warn","message":"Unauthorized access attempt to /orders","timestamp":"2025-05-26T12:20:25.870+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:20:25.914+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:26.080+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:20:40.664+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T12:20:40.734+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:20:40.824+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:40.914+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /orders","timestamp":"2025-05-26T12:20:46.148+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:46.288+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:20:48.089+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:48.260+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /pharmacy_orders","timestamp":"2025-05-26T12:20:50.155+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:50.300+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:20:51.720+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:20:51.858+03:00"}
+{"level":"info","message":"GET /admin/medicines","timestamp":"2025-05-26T12:20:53.435+03:00"}
+{"level":"warn","message":"404 Not Found: /admin/styles.css","timestamp":"2025-05-26T12:20:53.644+03:00"}
+{"level":"warn","message":"Access denied for user 'admin@mediprime.com' (role: admin) to /pharmacy_orders","timestamp":"2025-05-26T12:21:05.151+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:21:05.305+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:21:06.887+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:21:07.022+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:22:16.445+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:22:16.461+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:23:57.900+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:23:57.912+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:24:00.484+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:24:00.503+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:24:01.381+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:24:01.502+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T12:24:03.383+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T12:24:03.397+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:24:04.038+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:24:04.229+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:24:15.610+03:00"}
+{"level":"info","message":"user admin@mediprime.com logged in successfully","timestamp":"2025-05-26T12:24:15.693+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:24:15.791+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:24:15.997+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 1","timestamp":"2025-05-26T12:24:25.569+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T12:24:25.606+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:24:25.711+03:00"}
+{"level":"info","message":"Order 3 status updated to pending by pharmacy 1","timestamp":"2025-05-26T12:24:46.516+03:00"}
+{"level":"info","message":"Order 3 status updated to completed by pharmacy 1","timestamp":"2025-05-26T12:24:56.993+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-26T12:25:02.580+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:25:02.616+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:25:02.776+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T12:25:05.087+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:25:05.254+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T12:25:19.145+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T12:25:19.451+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T12:25:19.460+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T12:25:19.469+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:25:19.556+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T12:25:23.311+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T12:25:23.322+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:25:23.454+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:25:36.737+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:25:36.881+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-26T12:26:30.382+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:26:30.542+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:26:37.940+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:26:38.109+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T12:29:06.811+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T12:29:06.914+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T15:24:29.112+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T15:24:29.118+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T15:24:30.213+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T15:24:30.220+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:24:55.119+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:24:55.161+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T15:24:56.273+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T15:24:56.280+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-26T15:24:57.115+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:25:09.232+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:09.467+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:25:24.329+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:24.468+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:25:35.525+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T15:25:35.967+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:25:36.019+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:25:36.044+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:36.181+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T15:25:43.754+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T15:25:43.779+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:43.960+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:25:50.723+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:25:50.758+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:50.877+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:25:54.300+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:54.413+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:25:56.748+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:25:56.780+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:56.882+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:25:58.670+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:25:58.712+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:25:58.846+03:00"}
+{"level":"info","message":"User 3 (role: user) ordered medicine 25 quantity 19","timestamp":"2025-05-26T15:26:14.764+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:26:14.795+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:26:14.831+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:26:14.955+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T15:26:18.700+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T15:26:18.708+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:26:18.837+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-26T15:26:35.574+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:26:35.598+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:26:35.691+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:26:37.345+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:26:37.499+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:26:52.761+03:00"}
+{"level":"info","message":"pharmacy alice@company.com logged in successfully","timestamp":"2025-05-26T15:26:53.250+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:26:53.286+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:26:53.383+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-05-26T15:27:01.217+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:27:53.852+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:27:54.048+03:00"}
+{"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-05-26T15:27:59.624+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:28:05.145+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:28:05.305+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-05-26T15:28:07.932+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:28:31.744+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:28:31.910+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:28:33.312+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:28:33.457+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-26T15:28:51.789+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:28:51.939+03:00"}
+{"level":"info","message":"POST /signup","timestamp":"2025-05-26T15:29:48.229+03:00"}
+{"level":"info","message":"Pharmacy bob@company.com signed up successfully","timestamp":"2025-05-26T15:29:48.538+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:29:48.547+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:29:48.606+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:29:58.569+03:00"}
+{"level":"warn","message":"Login failed for user bob@company.com: Invalid credentials (email not found)","timestamp":"2025-05-26T15:29:58.575+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:30:11.000+03:00"}
+{"level":"info","message":"pharmacy bob@company.com logged in successfully","timestamp":"2025-05-26T15:30:11.512+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:30:11.533+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:30:11.666+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T15:36:50.286+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T15:36:50.308+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/dashboard","timestamp":"2025-05-26T15:36:54.703+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:36:56.993+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:36:57.144+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:37:53.774+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:37:53.891+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:37:53.946+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:37:53.993+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:37:56.817+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:37:56.987+03:00"}
+{"level":"warn","message":"404 Not Found: /login","timestamp":"2025-05-26T15:38:10.273+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:38:12.802+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:38:12.946+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T15:38:37.061+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T15:38:37.080+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:38:43.559+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:38:43.736+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:38:58.847+03:00"}
+{"level":"info","message":"pharmacy bob@company.com logged in successfully","timestamp":"2025-05-26T15:38:59.047+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:38:59.064+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:38:59.167+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-05-26T15:39:05.668+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:39:05.812+03:00"}
+{"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-05-26T15:39:12.043+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-05-26T15:39:26.744+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:39:26.867+03:00"}
+{"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-05-26T15:39:28.932+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:39:46.267+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:39:46.417+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:39:51.154+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:39:51.221+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:39:59.407+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:39:59.609+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:39:59.626+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:40:02.851+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:40:03.080+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:40:03.097+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:44:55.047+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:44:55.179+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:44:55.201+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:44:58.600+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\findMedicine.ejs:408\n    406|     }\r\n    407|   </script>\r\n >> 408|   <%- include(\"partials/footer.ejs\") %>\r\n    409| </body>\r\n    410| </html>\r\n    411| \n\nCould not find the include file \"partials/footer.ejs\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\findMedicine.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\findMedicine.ejs:408\n    406|     }\r\n    407|   </script>\r\n >> 408|   <%- include(\"partials/footer.ejs\") %>\r\n    409| </body>\r\n    410| </html>\r\n    411| \n\nCould not find the include file \"partials/footer.ejs\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\findMedicine.ejs\":107:17)\n    at findMedicine (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T15:44:58.708+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:44:58.885+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:45:01.664+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:45:01.799+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:45:01.821+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:45:21.958+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:45:22.118+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:45:22.132+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:45:24.299+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-26T15:45:24.521+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:45:24.536+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:47:42.643+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:47:42.756+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-26T15:47:43.005+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:47:53.152+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:47:53.240+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:47:54.884+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:47:54.948+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:48:05.339+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:48:05.395+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:48:21.833+03:00"}
+{"level":"info","message":"pharmacy alice@company.com logged in successfully","timestamp":"2025-05-26T15:48:22.133+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T15:48:22.174+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T15:48:22.219+03:00"}
+{"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-05-26T15:48:25.401+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T15:48:46.903+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:48:46.952+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T15:48:49.156+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:48:49.198+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T15:49:12.524+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-26T15:49:12.778+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:49:12.814+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:49:12.856+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:49:12.906+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T15:49:20.045+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T15:49:20.057+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:49:20.398+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:49:44.565+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:49:44.624+03:00"}
+{"level":"info","message":"User 3 (role: user) ordered medicine 25 quantity 1","timestamp":"2025-05-26T15:50:03.959+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-26T15:50:04.018+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T15:50:04.071+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:50:04.169+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-26T15:50:08.111+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-26T15:50:08.118+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:50:08.210+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T15:50:21.357+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:03:02.610+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:03:02.623+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T16:03:22.392+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:03:22.450+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:03:25.097+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:03:25.121+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T16:03:26.325+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:03:26.347+03:00"}
+{"level":"warn","message":"404 Not Found: /login","timestamp":"2025-05-26T16:03:43.204+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:03:46.992+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:03:47.013+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:03:55.456+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:03:55.465+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T16:04:00.063+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:04:00.102+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-26T16:04:13.911+03:00"}
+{"level":"info","message":"pharmacy bob@company.com logged in successfully","timestamp":"2025-05-26T16:04:13.995+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-26T16:04:14.002+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-26T16:04:14.043+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-05-26T16:04:19.814+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:04:19.842+03:00"}
+{"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-05-26T16:04:21.678+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:27:14.556+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:27:14.567+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:27:15.683+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:27:15.691+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:27:22.579+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:27:22.587+03:00"}
+{"level":"warn","message":"Unauthorized access attempt to /pharmacy_add_medicine","timestamp":"2025-05-26T16:27:33.777+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T16:27:33.791+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\login.ejs:12\n    10|   <%- include(\"_header.ejs\") %>\r\n    11| \r\n >> 12| <% if (success_msg && success_msg.length > 0) { %>\r\n    13|     <div class=\"alert alert-success\" role=\"alert\">\r\n    14|         <%= success_msg %>\r\n    15|     </div>\r\n\nsuccess_msg is not defined","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\login.ejs","stack":"ReferenceError: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\login.ejs:12\n    10|   <%- include(\"_header.ejs\") %>\r\n    11| \r\n >> 12| <% if (success_msg && success_msg.length > 0) { %>\r\n    13|     <div class=\"alert alert-success\" role=\"alert\">\r\n    14|         <%= success_msg %>\r\n    15|     </div>\r\n\nsuccess_msg is not defined\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\login.ejs\":15:8)\n    at login (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)\n    at ServerResponse.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\response.js:909:7)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:129:7\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)","timestamp":"2025-05-26T16:27:33.807+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:27:35.014+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:27:35.022+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:27:35.761+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:11\n    9| </head>\r\n    10| <body>\r\n >> 11|     <%- include('partials/header') %>\r\n    12| \r\n    13|     <div class=\"container mt-5\">\r\n    14|         <div class=\"jumbotron text-center\">\r\n\nCould not find the include file \"partials/header\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:11\n    9| </head>\r\n    10| <body>\r\n >> 11|     <%- include('partials/header') %>\r\n    12| \r\n    13|     <div class=\"container mt-5\">\r\n    14|         <div class=\"jumbotron text-center\">\r\n\nCould not find the include file \"partials/header\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\landing.ejs\":12:17)\n    at landing (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T16:27:35.776+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:27:37.460+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:11\n    9| </head>\r\n    10| <body>\r\n >> 11|     <%- include('partials/header') %>\r\n    12| \r\n    13|     <div class=\"container mt-5\">\r\n    14|         <div class=\"jumbotron text-center\">\r\n\nCould not find the include file \"partials/header\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:11\n    9| </head>\r\n    10| <body>\r\n >> 11|     <%- include('partials/header') %>\r\n    12| \r\n    13|     <div class=\"container mt-5\">\r\n    14|         <div class=\"jumbotron text-center\">\r\n\nCould not find the include file \"partials/header\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\landing.ejs\":12:17)\n    at landing (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T16:27:37.465+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:28:44.119+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:28:44.127+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:28:50.730+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:54\n    52|     </div>\r\n    53| \r\n >> 54|     <%- include('partials/footer') %>\r\n    55| \r\n    56|     <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\r\n    57|     <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\r\n\nCould not find the include file \"partials/footer\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:54\n    52|     </div>\r\n    53| \r\n >> 54|     <%- include('partials/footer') %>\r\n    55| \r\n    56|     <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\r\n    57|     <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\r\n\nCould not find the include file \"partials/footer\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\landing.ejs\":36:17)\n    at landing (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T16:28:50.742+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:28:52.989+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:54\n    52|     </div>\r\n    53| \r\n >> 54|     <%- include('partials/footer') %>\r\n    55| \r\n    56|     <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\r\n    57|     <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\r\n\nCould not find the include file \"partials/footer\"","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs","stack":"Error: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\landing.ejs:54\n    52|     </div>\r\n    53| \r\n >> 54|     <%- include('partials/footer') %>\r\n    55| \r\n    56|     <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\r\n    57|     <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\r\n\nCould not find the include file \"partials/footer\"\n    at getIncludePath (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:185:13)\n    at includeFile (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:311:19)\n    at include (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:701:16)\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\landing.ejs\":36:17)\n    at landing (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)","timestamp":"2025-05-26T16:28:53.006+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:29:16.466+03:00"}
+{"level":"warn","message":"404 Not Found: /css/style.css","timestamp":"2025-05-26T16:29:16.508+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:30:28.323+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:30:28.330+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:30:32.761+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:30:32.794+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-26T16:30:38.141+03:00"}
+{"level":"error","message":"Unexpected error C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\signup.ejs:12\n    10|   <%- include(\"_header.ejs\") %>\r\n    11| \r\n >> 12| <% if (success_msg && success_msg.length > 0) { %>\r\n    13|     <div class=\"alert alert-success\" role=\"alert\">\r\n    14|         <%= success_msg %>\r\n    15|     </div>\r\n\nsuccess_msg is not defined","path":"C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\signup.ejs","stack":"ReferenceError: C:\\Users\\ADMIN\\Desktop\\MediPrime\\views\\signup.ejs:12\n    10|   <%- include(\"_header.ejs\") %>\r\n    11| \r\n >> 12| <% if (success_msg && success_msg.length > 0) { %>\r\n    13|     <div class=\"alert alert-success\" role=\"alert\">\r\n    14|         <%= success_msg %>\r\n    15|     </div>\r\n\nsuccess_msg is not defined\n    at eval (\"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\MediPrime\\\\views\\\\signup.ejs\":15:8)\n    at signup (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:703:17)\n    at tryHandleCache (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:274:36)\n    at exports.renderFile [as engine] (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\view.js:139:8)\n    at tryRender (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:627:10)\n    at Function.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\application.js:574:3)\n    at ServerResponse.render (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\express\\lib\\response.js:909:7)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:126:7\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)","timestamp":"2025-05-26T16:30:38.150+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:30:41.285+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:30:41.309+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-26T16:30:54.171+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-26T16:30:54.178+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:35:48.144+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:35:48.170+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T16:35:51.074+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:35:51.114+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-26T16:35:52.802+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:35:52.829+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-26T16:35:53.981+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:35:54.014+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:35:57.358+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:35:57.384+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-26T16:35:59.448+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:35:59.480+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-26T16:36:01.243+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:36:01.271+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T16:36:02.899+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:36:02.930+03:00"}

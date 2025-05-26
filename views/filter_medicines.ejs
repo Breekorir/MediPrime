@@ -3,19 +3,52 @@
 <h2>Filtered Medicine Results</h2>
 
 <% if (medicines.length > 0) { %>
-  <ul>
+  <div class="medicine-list">
     <% medicines.forEach(med => { %>
-      <li>
-        <strong><%= med.name %></strong> - <%= med.location %> - 
-        <% if (med.availability) { %>✔️ In Stock<% } else { %>❌ Out of Stock<% } %> - 
-        <%= med.pharmacy_name %>
-      </li>
+      <div class="medicine-item" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+        <h3><%= med.name %></h3>
+        <p><strong>Location:</strong> <%= med.location %></p>
+        <p><strong>Pharmacy:</strong> <%= med.pharmacy_name %></p>
+        <p><strong>Category:</strong> <%= med.category %></p>
+        <p><strong>Availability:</strong>
+          <% if (med.availability > 0) { %>
+            <span style="color: green;">✔️ In Stock (<%= med.availability %> available)</span>
+          <% } else { %>
+            <span style="color: red;">❌ Out of Stock</span>
+          <% } %>
+        </p>
+
+        <% if (user && med.availability > 0) { %>
+          <form action="/user_orders" method="POST" style="margin-top: 15px;">
+            <input type="hidden" name="medicine_id" value="<%= med.id %>">
+            <label for="quantity_<%= med.id %>" style="display: block; margin-bottom: 5px;">Quantity:</label>
+            <input
+              type="number"
+              id="quantity_<%= med.id %>"
+              name="quantity"
+              value="1"
+              min="1"
+              max="<%= med.availability %>"
+              required
+              style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 80px;"
+            >
+            <button
+              type="submit"
+              style="background-color: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px;"
+            >
+              Place Order
+            </button>
+          </form>
+        <% } else if (user && med.availability === 0) { %>
+          <p style="color: gray;">Cannot place order: Out of Stock.</p>
+        <% } else { %>
+          <p style="color: #007bff;">Login to place an order.</p>
+        <% } %>
+      </div>
     <% }) %>
-  </ul>
+  </div>
 <% } else { %>
   <p>No medicines found matching the filters.</p>
 <% } %>
 
-<a href="/findMedicine">🔙 Back to Search</a>
-
-<%- include("partials/footer") %>
+<a href="/findMedicine" style="display: inline-block; margin-top: 20px; padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">🔙 Back to Search</a>
