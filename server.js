@@ -556,6 +556,7 @@ app.post("/login", [
       logger.warn(`Login failed for ${role} ${email}: Invalid credentials (email not found)`);
       return res.status(401).send("Invalid credentials.");
     }
+    
 
     const user = results[0];
 

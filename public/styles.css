@@ -27,12 +27,14 @@ body {
   font-weight: bold;
 }
 
-#menu-toggle {
-display: none;
-font-size: 2rem;
-cursor: pointer;
-color: #fff;
-}
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
 .nav-links {
   list-style: none;
   display: flex;
@@ -672,3 +674,35 @@ header a {
   text-decoration: none;
   color: #007BFF;
 }
+
+    @media (max-width: 768px) {
+      /* Hide the ul by default on small screens */
+      .nav-links {
+        flex-direction: column;
+        background: #2e3192;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%; /* Make it full width */
+        height: auto; /* Adjust height dynamically */
+        display: none; /* Hide by default */
+        text-align: center;
+        padding: 20px 0; /* Add some padding */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000; /* Ensure it's above other content */
+      }
+
+      /* When the 'show' class is added to the ul, display it */
+      .nav-links .nav-links {
+        display: flex; /* Or 'block' if you prefer */
+      }
+
+      .nav-links {
+        margin: 10px 0; /* Adjust vertical margin for mobile links */
+      }
+
+      #menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+    }

@@ -1418,3 +1418,352 @@
 {"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:36:01.271+03:00"}
 {"level":"info","message":"GET /findMedicine","timestamp":"2025-05-26T16:36:02.899+03:00"}
 {"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-26T16:36:02.930+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T12:33:48.858+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T12:33:48.870+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T12:33:50.946+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T12:33:50.960+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:38:16.751+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:38:16.861+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T12:38:19.099+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T12:38:19.114+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-28T12:38:19.206+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T12:38:22.894+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:38:23.242+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-28T12:38:26.446+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:38:26.584+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:38:28.091+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:38:28.191+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-28T12:39:03.880+03:00"}
+{"level":"warn","message":"Login failed for user brigdkorir4@gmail.com: Invalid password","timestamp":"2025-05-28T12:39:04.302+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-28T12:39:13.590+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-28T12:39:14.033+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-28T12:39:14.072+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T12:39:14.092+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:39:14.225+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-28T12:39:29.204+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-28T12:39:29.231+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:39:29.410+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-28T12:39:47.478+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:39:47.505+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:39:47.610+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:39:50.127+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:39:50.224+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:39:51.593+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:39:51.647+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:39:59.417+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:39:59.506+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:40:02.161+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:40:02.275+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:40:05.740+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:40:05.840+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:40:09.505+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:40:09.582+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T12:50:04.495+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T12:50:04.510+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:50:26.538+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:50:26.651+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T12:50:28.034+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:50:28.196+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:50:31.460+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:50:31.513+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:50:39.583+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T12:50:39.641+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:52:30.014+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:52:30.149+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T12:52:30.161+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:52:31.367+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T12:52:31.522+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:52:31.530+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T12:55:42.379+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T12:55:42.393+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:55:48.200+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T12:55:48.390+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T12:55:48.411+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T12:58:43.478+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T12:58:43.492+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T12:58:59.262+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T12:58:59.396+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:00:04.301+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:00:04.327+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:00:07.529+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:00:07.687+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:00:13.451+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:00:13.551+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:05:03.625+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:05:03.781+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:05:03.807+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:07:26.500+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:07:26.515+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:07:31.378+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:07:31.578+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:07:31.592+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:08:36.175+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:08:36.260+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:08:36.270+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:11:11.959+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:11:12.091+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:11:12.109+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:12:04.835+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:12:04.990+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:12:05.010+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:12:23.776+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:12:25.451+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:12:25.465+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:12:30.194+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:12:30.343+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:12:30.355+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:15:13.889+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:15:14.050+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:15:14.059+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:15:23.665+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:15:23.815+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:15:23.827+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:15:27.068+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:15:27.263+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:15:27.286+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:15:41.519+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:15:41.594+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:19:20.980+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:19:21.155+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:19:21.170+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:34:18.566+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:34:20.319+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:34:20.326+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T13:34:31.822+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:34:31.910+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-28T13:34:32.087+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T13:34:44.121+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:34:44.162+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T13:34:55.725+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:34:55.766+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-28T13:35:00.362+03:00"}
+{"level":"info","message":"pharmacy alice@company.com logged in successfully","timestamp":"2025-05-28T13:35:00.446+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-28T13:35:00.492+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-28T13:35:00.586+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-28T13:35:06.546+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-28T13:35:06.604+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-28T13:35:24.712+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:35:24.749+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:35:38.868+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:35:38.944+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:39:58.069+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:39:58.078+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:40:06.972+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:40:07.035+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:40:07.041+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:40:08.186+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:40:08.193+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:42:18.150+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:42:18.161+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:42:20.156+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:42:20.241+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:42:22.297+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:42:22.311+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:42:25.549+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:42:25.603+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:42:25.615+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:43:21.817+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:43:21.825+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:43:26.049+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:43:26.103+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:43:28.428+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:43:28.473+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:43:30.621+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:43:30.645+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:43:34.559+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:43:34.602+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:45:16.025+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:45:16.033+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:45:20.086+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:45:20.158+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:45:20.170+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:53:29.741+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:53:29.776+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:53:29.789+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:53:53.832+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:53:53.898+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:53:53.912+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:54:57.527+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:54:57.575+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:54:57.619+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:56:15.761+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:56:15.812+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:56:15.833+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T13:56:30.800+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:56:30.851+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:56:30.856+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-28T13:56:33.521+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-28T13:56:33.606+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-28T13:56:33.617+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:56:33.623+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:56:33.677+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:56:33.684+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-28T13:56:37.986+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-28T13:56:37.990+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:56:38.066+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:56:38.072+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-28T13:57:41.091+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-28T13:57:41.094+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:57:41.121+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:57:41.140+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-28T13:57:44.772+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-28T13:57:44.777+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:57:44.825+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:57:44.829+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T13:58:00.262+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T13:58:00.271+03:00"}
+{"level":"warn","message":"Unauthorized access attempt to /orders","timestamp":"2025-05-28T13:58:04.012+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T13:58:04.022+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:58:04.068+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:58:04.080+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-28T13:58:07.376+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-28T13:58:07.467+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-28T13:58:07.476+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T13:58:07.482+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-28T13:58:07.591+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T13:58:07.617+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T14:01:03.438+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T14:01:04.049+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T14:01:06.970+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T14:01:07.093+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-28T14:01:11.892+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T14:01:11.988+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-28T14:01:14.713+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-28T14:01:14.810+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-28T14:01:14.841+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-28T14:01:14.863+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T14:01:14.911+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-28T14:01:18.282+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-28T14:01:18.285+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T14:01:18.387+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-28T14:01:23.782+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-28T14:01:23.820+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-28T14:01:23.864+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-28T14:20:07.022+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-28T14:20:07.042+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-29T11:44:38.453+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-29T11:44:38.462+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-29T11:44:39.657+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-29T11:44:39.666+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T11:45:01.093+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:45:01.142+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-29T11:45:02.243+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-29T11:45:02.250+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-29T11:45:03.982+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:45:08.378+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:45:08.492+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-29T11:45:17.213+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:45:17.249+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T11:50:46.462+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:50:46.496+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-05-29T11:50:55.486+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:50:55.523+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-29T11:50:59.658+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:50:59.708+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-29T11:51:14.666+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-29T11:51:14.858+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-29T11:51:14.877+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:51:14.885+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:14.958+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-29T11:51:20.513+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-29T11:51:20.522+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:20.636+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T11:51:26.462+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:26.502+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:51:29.014+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:29.049+03:00"}
+{"level":"info","message":"User 3 (role: user) ordered medicine 25 quantity 26","timestamp":"2025-05-29T11:51:49.663+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-29T11:51:49.668+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:51:49.673+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:49.708+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-29T11:51:52.915+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-29T11:51:52.919+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:52.946+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:51:57.010+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:51:57.040+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-29T11:52:08.397+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-29T11:52:08.399+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:52:08.430+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-05-29T11:52:21.112+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T11:52:21.119+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:52:21.151+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-29T11:52:22.979+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:52:23.008+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-29T11:52:34.072+03:00"}
+{"level":"info","message":"pharmacy bob@company.com logged in successfully","timestamp":"2025-05-29T11:52:34.159+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-29T11:52:34.168+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/index.js","timestamp":"2025-05-29T11:52:34.206+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-29T11:52:34.213+03:00"}
+{"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-05-29T11:52:40.793+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-05-29T11:52:53.115+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:52:53.159+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-05-29T11:52:55.179+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/styles.css","timestamp":"2025-05-29T11:52:55.229+03:00"}
+{"level":"warn","message":"404 Not Found: /pharmacy/index.js","timestamp":"2025-05-29T11:52:55.231+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:52:56.885+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:52:56.929+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T11:52:58.513+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:52:58.545+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-29T11:54:14.060+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:14.092+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-29T11:54:25.812+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-29T11:54:25.899+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-29T11:54:25.907+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:54:25.911+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:25.944+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-29T11:54:32.265+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-29T11:54:32.269+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:32.309+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T11:54:44.923+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:44.977+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:54:50.856+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:50.886+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-29T11:54:53.271+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T11:54:53.284+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:53.313+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-29T11:54:57.558+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-29T11:54:57.560+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T11:54:57.594+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T12:27:07.379+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:27:07.476+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-05-29T12:29:44.315+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:29:44.384+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-05-29T12:29:44.658+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:30:30.268+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:30:30.328+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T12:30:44.456+03:00"}
+{"level":"error","message":"Database error on /findMedicine Can't add new command when connection is in closed state","stack":"Error: Can't add new command when connection is in closed state\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:159:32\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:291:5)","timestamp":"2025-05-29T12:30:44.481+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:30:44.591+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T12:31:56.644+03:00"}
+{"level":"error","message":"Database error on /findMedicine Can't add new command when connection is in closed state","stack":"Error: Can't add new command when connection is in closed state\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:159:32\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:291:5)","timestamp":"2025-05-29T12:31:56.646+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:31:56.708+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:32:32.182+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:32:32.299+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T12:32:38.959+03:00"}
+{"level":"error","message":"Database error on /findMedicine Can't add new command when connection is in closed state","stack":"Error: Can't add new command when connection is in closed state\n    at PromiseConnection.execute (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\mysql2\\lib\\promise\\connection.js:47:22)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\server.js:159:32\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\ADMIN\\Desktop\\MediPrime\\node_modules\\router\\index.js:291:5)","timestamp":"2025-05-29T12:32:38.984+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:32:39.099+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-05-29T12:33:30.009+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-05-29T12:33:30.027+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T12:33:47.725+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:33:47.943+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:33:47.959+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T12:34:58.474+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:34:58.638+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:34:58.652+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-05-29T12:35:02.018+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:35:02.139+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:35:02.161+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-29T12:35:05.826+03:00"}
+{"level":"warn","message":"Login failed for pharmacy brigdkorir4@gmail.com: Invalid credentials (email not found)","timestamp":"2025-05-29T12:35:05.843+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:35:05.967+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:35:10.940+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-05-29T12:35:15.569+03:00"}
+{"level":"info","message":"user brigdkorir4@gmail.com logged in successfully","timestamp":"2025-05-29T12:35:15.876+03:00"}
+{"level":"info","message":"GET /dashboard","timestamp":"2025-05-29T12:35:15.899+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-05-29T12:35:15.908+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:35:16.020+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:35:16.034+03:00"}
+{"level":"info","message":"Accessing /orders with userId: 3","timestamp":"2025-05-29T12:35:21.002+03:00"}
+{"level":"info","message":"Rendering user_orders with orders found.","timestamp":"2025-05-29T12:35:21.034+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-05-29T12:35:21.235+03:00"}
+{"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-05-29T12:35:21.279+03:00"}

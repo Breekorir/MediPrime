@@ -1,6 +1,6 @@
 # MediPrime 🏥💊
 
-MediPrime is a full-stack web application for tracking and finding medicine availability across various pharmacies. The platform allows both individuals and pharmacies to register, login, and interact with the system based on their roles.It also allows users to search for medicines, view their availability, and get notified when a medicine is available.It allows users to order the available medicines.
+MediPrime is a full-stack web application for tracking and finding medicine availability across various pharmacies. The platform allows both individuals and pharmacies to register, login, and interact with the system based on their roles. It also allows users to search for medicines, view their availability, and get notified when a medicine is available. It allows users to order the available medicines.
 
 ---
 
@@ -10,8 +10,12 @@ MediPrime is a full-stack web application for tracking and finding medicine avai
 * 🔐 Role-based login and dashboards
 * 🔍 Search medicines by name, location, or availability
 * 🏥 Pharmacies can manage their own medicine listings
-* �� Admin dashboard with medicine stats
+* 📊 Admin dashboard with medicine stats
 * ✉️ Session-based authentication using `express-session`
+* 🔔 Real-time notifications for medicine availability
+* 📱 Responsive design for mobile and desktop
+* 🛒 Online ordering and order tracking
+* 🔄 Automatic stock updates by pharmacies
 
 ---
 
@@ -21,6 +25,7 @@ MediPrime is a full-stack web application for tracking and finding medicine avai
 * **Frontend:** EJS (Embedded JavaScript Templates)
 * **Database:** MySQL
 * **Authentication:** bcrypt, express-session
+* **Real-time:** Socket.IO for notifications
 
 ---
 
@@ -60,6 +65,17 @@ CREATE TABLE medicines (
   pharmacy_id INT,
   FOREIGN KEY (pharmacy_id) REFERENCES users(id)
 );
+
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  medicine_id INT,
+  quantity INT,
+  status ENUM('pending', 'completed', 'cancelled') DEFAULT 'pending',
+  order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (medicine_id) REFERENCES medicines(id)
+);
 ```
 
 Update the MySQL connection in `server.js`:
@@ -73,7 +89,15 @@ const db = mysql.createConnection({
 });
 ```
 
-### 4. Run the app
+### 4. Seed the database (optional)
+
+You can seed the database with sample data by running:
+
+```bash
+node seed.js
+```
+
+### 5. Run the app
 
 ```bash
 node server.js
@@ -83,12 +107,24 @@ Visit: [http://localhost:3000](http://localhost:3000)
 
 ---
 
+## 🛠️ API Endpoints
+
+| Endpoint               | Method | Description                          |
+|------------------------|--------|----------------------------------|
+| `/api/medicines`       | GET    | Get list of all medicines          |
+| `/api/medicines/:id`   | GET    | Get details of a specific medicine |
+| `/api/orders`          | POST   | Place a new order                  |
+| `/api/orders/:id`      | GET    | Get order status                  |
+
+---
+
 ## 🔪 Sample Credentials
 
 You can register as:
 
-* **Individual** – Can search for medicines
-* **Pharmacy** – Can add/edit their own medicine listings
+* **Individual** – Can search for medicines and place orders
+* **Pharmacy** – Can add/edit their own medicine listings and update stock
+* **Admin** – Can view all orders and manage users
 
 ---
 
@@ -103,6 +139,25 @@ mediprime/
 ├── package.json
 └── README.md
 ```
+
+---
+
+## 🧪 Testing
+
+To run tests (if available), use:
+
+```bash
+npm test
+```
+
+---
+
+## 📞 Contact
+
+For questions or support, please contact:
+
+* Email: support@mediprime.com
+* GitHub: https://github.com/your-username/mediprime
 
 ---
 

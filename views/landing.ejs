@@ -27,13 +27,31 @@
       font-weight: bold;
     }
 
-    nav a {
-      color: white;
+    .nav-links ul { /* Target the ul inside nav-links for general styling */
+      list-style: none; /* Remove bullet points */
+      margin: 0;
+      padding: 0;
+      display: flex; /* Display horizontally on larger screens */
+    }
+
+    .nav-links ul li {
       margin-left: 20px;
+    }
+
+    .nav-links ul li a { /* Corrected selector for anchor tags */
+      color: white;
       text-decoration: none;
       font-weight: 500;
     }
 
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -76,7 +94,6 @@
       max-width: 450px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      
     }
 
     .section {
@@ -135,17 +152,51 @@
       color: white;
       padding: 20px;
     }
+
+    @media (max-width: 768px) {
+      /* Hide the ul by default on small screens */
+      .nav-links ul {
+        flex-direction: column;
+        background: #2e3192;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%; /* Make it full width */
+        height: auto; /* Adjust height dynamically */
+        display: none; /* Hide by default */
+        text-align: center;
+        padding: 20px 0; /* Add some padding */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000; /* Ensure it's above other content */
+      }
+
+      /* When the 'show' class is added to the ul, display it */
+      .nav-links ul.show {
+        display: flex; /* Or 'block' if you prefer */
+      }
+
+      .nav-links ul li {
+        margin: 10px 0; /* Adjust vertical margin for mobile links */
+      }
+
+      #menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">🩺 MediPrime</div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/findMedicine">Find Medicine</a>
-      <a href="/login">Login</a>
-      <a href="/signup">Sign Up</a>
-    </nav>
+    <button id="menu-toggle">☰</button>
+
+    <nav class="nav-links" id="nav-links">
+      <ul> <li><a href="/">Home</a></li>
+        <li><a href="/findMedicine">Find Medicine</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+      </ul> </nav>
   </header>
 
   <section class="hero">
@@ -155,10 +206,9 @@
       <a href="/findMedicine">Search Medicines</a>
     </div>
     <div class="hero-image">
-<img src="/images/med.jpg" alt="Find Medicine">
+      <img src="/images/med.jpg" alt="Find Medicine">
     </div>
   </section>
-  
 
   <section class="section">
     <h2>Why Choose MediPrime?</h2>
@@ -191,5 +241,14 @@
   <footer>
     &copy; 2025 MediPrime. All rights reserved.
   </footer>
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    // We now want to select the UL element inside the nav, not the nav itself
+    const navUl = document.querySelector('#nav-links ul'); // Select the ul inside #nav-links
+
+    toggleBtn.addEventListener('click', () => {
+      navUl.classList.toggle('show'); // Toggle the class on the ul
+    });
+  </script>
 </body>
 </html>
