@@ -1,31 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pharmacy Dashboard - MediPrime</title>
-  <link rel="stylesheet" href="/styles.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pharmacy Dashboard - MediPrime</title>
+    <link rel="stylesheet" href="/styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+<style>
+  /* styles.css */
+
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+    background-color: #f3f4f6; /* Light gray background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Container for the main dashboard content */
+.container {
+    width: 90%;
+    max-width: 1000px; /* Increased max-width for more spacious feel */
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    border-radius: 12px; /* Slightly more rounded corners */
+    padding: 40px; /* Increased padding */
+    margin-top: 30px; /* Spacing from the top */
+    box-sizing: border-box;
+}
+
+/* Welcome Heading */
+.container h2 {
+    font-size: 2.8rem; /* Larger font for main heading */
+    font-weight: 800; /* Extra bold */
+    color: #1a365d; /* Darker blue for prominence */
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Section Headings */
+.container h3 {
+    font-size: 2rem; /* Larger font for section heading */
+    font-weight: 600; /* Semi-bold */
+    color: #2d3748; /* Dark gray */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #a7d9fe; /* Light blue underline */
+}
+
+/* Action Buttons Container */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Spacing between buttons */
+    margin-bottom: 30px;
+    justify-content: center; /* Center buttons on small screens */
+}
+
+/* Action Buttons */
+.action-buttons a {
+    display: inline-block;
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+}
+
+.action-buttons a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.35);
+}
+
+.action-buttons a:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Specific button color for Edit Medicines for differentiation */
+.action-buttons a:nth-of-type(2) {
+    background-color: #667eea; /* Indigo-like color */
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.action-buttons a:nth-of-type(2):hover {
+    background-color: #5a67d8;
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.35);
+}
+
+
+/* Medicine List */
+.medicine-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.medicine-list li {
+    background-color: #fdfefe; /* Very light background for items */
+    border: 1px solid #e2e8f0; /* Light border */
+    border-radius: 10px;
+    padding: 25px; /* Increased padding */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to start */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.medicine-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.medicine-list li strong {
+    font-size: 1.5rem; /* Larger font for medicine name */
+    color: #2d3748; /* Dark gray */
+    margin-bottom: 8px;
+    display: block; /* Ensure it takes full width */
+}
+
+.medicine-list li p {
+    font-size: 1.05rem; /* Slightly larger text for details */
+    color: #4a5568; /* Medium gray */
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+/* Edit/Delete Links within list items */
+.medicine-actions {
+    display: flex;
+    gap: 20px; /* Increased space between links */
+    margin-top: 15px; /* Space above links */
+}
+
+.medicine-actions a {
+    color: #007bff; /* Primary blue for edit */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.medicine-actions a.delete-link {
+    color: #e53e3e; /* Red for delete */
+}
+
+.medicine-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Empty list message */
+.empty-list-message {
+    text-align: center;
+    color: #667eea; /* Matches the secondary button color */
+    padding: 40px 20px;
+    font-size: 1.1rem;
+    border: 1px dashed #a7d9fe;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        margin-top: 20px;
+    }
+
+    .container h2 {
+        font-size: 2.2rem;
+    }
+
+    .container h3 {
+        font-size: 1.7rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-buttons a {
+        width: 100%; /* Full width buttons on small screens */
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .medicine-list li {
+        padding: 20px;
+    }
+
+    .medicine-list li strong {
+        font-size: 1.3rem;
+    }
+
+    .medicine-list li p {
+        font-size: 1rem;
+    }
+
+    .medicine-actions {
+        flex-direction: row; /* Keep as row, but maybe reduce gap if needed */
+        gap: 15px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .container h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    .container h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    .action-buttons a {
+        font-size: 0.95rem;
+        padding: 8px 15px;
+    }
+    .medicine-list li {
+        padding: 15px;
+    }
+    .medicine-list li strong {
+        font-size: 1.2rem;
+    }
+    .medicine-list li p {
+        font-size: 0.9rem;
+    }
+    .medicine-actions {
+        gap: 10px;
+    }
+}
+</style>
 <body>
-  <%- include("_header.ejs") %>
+    <%- include("_header.ejs") %>
 
-  <div class="container">
-    <h2>Welcome, <%= pharmacy.name %></h2>
+    <div class="container">
+        <h2>Welcome, <%= pharmacy.name %></h2>
 
-    <h3>Your Medicines</h3>
-    <a href="/pharmacy_add_medicine">Add New Medicine</a>
-    <a href="/pharmacy_edit_medicines">Edit Medicine</a>
-    <ul>
-      <% medicines.forEach(medicine => { %>
-        <li>
-          <strong><%= medicine.name %></strong><br />
-          Location: <%= medicine.location %><br />
-          Availability: <%= medicine.availability %><br />
-          <a href="/pharmacy/medicines/<%= medicine.id %>/edit">Edit</a>
-          <a href="/pharmacy/medicines/<%= medicine.id %>/delete">Delete</a>
-        </li>
-      <% }); %>
-    </ul>
-  </div>
+        <h3>Your Medicines</h3>
+        <div class="action-buttons">
+            <a href="/pharmacy_add_medicine">Add New Medicine</a>
+            <a href="/pharmacy_edit_medicines">Edit Medicines</a>
+        </div>
+
+        <ul class="medicine-list">
+            <% if (medicines && medicines.length > 0) { %>
+                <% medicines.forEach(medicine => { %>
+                    <li>
+                        <strong><%= medicine.name %></strong>
+                        <p>Location: <%= medicine.location %></p>
+                        <p>Availability: <%= medicine.availability %></p>
+                        <div class="medicine-actions">
+                            <a href="/pharmacy/medicines/<%= medicine.id %>/edit">Edit</a>
+                            <a href="/pharmacy/medicines/<%= medicine.id %>/delete" class="delete-link">Delete</a>
+                        </div>
+                    </li>
+                <% }); %>
+            <% } else { %>
+                <li class="empty-list-message">
+                    <p>No medicines added yet. Click "Add New Medicine" to get started!</p>
+                </li>
+            <% } %>
+        </ul>
+    </div>
 </body>
 </html>

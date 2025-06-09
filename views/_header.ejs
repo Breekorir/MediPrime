@@ -1,35 +1,41 @@
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="/styles.css" />
 <header>
     <nav class="navbar">
       <div class="logo"><a href="/">🩺 MediPrime</a></div>
       <button id="menu-toggle">☰</button>
-                <ul class="nav-links" id ="nav-links">
-
-           <li> <a href="/">Home</a></li>
-           <li> <a href="/findMedicine">Find Medicine</a></li>
+      <ul class="nav-links" id="nav-links">
+           <li><a href="/">Home</a></li>
+           <li><a href="/findMedicine">Find Medicine</a></li>
 
             <% if (user) { %>
                 <% if (user.role === 'user') { %>
-                   <li> <a href="/dashboard">Dashboard</a></li>
-                   <li> <a href="/orders">My Orders</a></li>
+                   <li><a href="/dashboard">Dashboard</a></li>
+                   <li><a href="/orders">My Orders</a></li>
                 <% } else if (user.role === 'pharmacy') { %>
                    <li><a href="/pharmacy/dashboard">Dashboard</a></li>
-                 <li>  <a href="/pharmacy_edit_medicines">Manage Medicines</a></li>
-                  <li> <a href="/pharmacy_add_medicine">Add Medicine</a></li>
-                  <li> <a href="/pharmacy_orders">Pharmacy Orders</a></li>
+                   <li><a href="/pharmacy_edit_medicines">Manage Medicines</a></li>
+                   <li><a href="/pharmacy_add_medicine">Add Medicine</a></li>
+                   <li><a href="/pharmacy_orders">Pharmacy Orders</a></li>
                 <% } else if (user.role === 'admin') { %>
-                  <li> <a href="/dashboard">Admin Dashboard</a></li>
+                   <li><a href="/dashboard">Admin Dashboard</a></li>
                    <li><a href="/admin/medicines">Manage All Medicines</a></li>
-                  <li> <a href="/orders">All User Orders</a> </li>
-                  <li> <a href="/pharmacy_orders">All Pharmacy Orders</a> </li>
+                   <li><a href="/orders">All User Orders</a></li>
+                   <li><a href="/pharmacy_orders">All Pharmacy Orders</a></li>
                 <% } %>
-              <li> <a href="/logout">Logout (<%= user.name %>)</a></li>
+              <li><a href="/logout">Logout (<%= user.name %>)</a></li>
             <% } else { %>
-              <li> <a href="/login">Login</a></li>
+              <li><a href="/login">Login</a></li>
               <li><a href="/signup">Sign Up</a></li>
             <% } %>
-        </nav>
-    </header>
-    
-    <main>
-        <script src="index.js"></script>
+      </ul>
+    </nav>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navUl = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navUl.classList.toggle('show');
+  });
+</script>

@@ -5,6 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard - MediPrime</title>
   <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9faff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h2 {
+      color: #004c99;
+      margin-bottom: 20px;
+    }
+    h3 {
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+    form {
+      display: flex;
+      margin-bottom: 30px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .medicine-results ul {
+      list-style: none;
+      padding: 0;
+    }
+    .medicine-results li {
+      background: white;
+      margin-bottom: 12px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+    }
+    .medicine-results li strong {
+      color: #0077cc;
+    }
+    .medicine-results p {
+      color: #666;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <%- include("_header.ejs") %>

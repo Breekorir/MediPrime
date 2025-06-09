@@ -27,14 +27,15 @@ body {
   font-weight: bold;
 }
 
-    #menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-    }
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -56,7 +57,8 @@ body {
   padding: 2rem;
   text-align: center;
 }
-    .intro {
+
+.intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +68,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center; 
-    }
+}
+
 .intro h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -123,586 +126,34 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1.2rem;
 }
-/* ===============================
- Responsive Layout – ≤768px
-================================== */
-nav ul li {
-  margin: 1rem 0;
-}
-
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-} 
-.find-medicine-layout {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: flex-start;
-padding: 20px;
-gap: 2rem;
-}
-
-
-.search-section {
-max-width: 600px;
-flex: 1;
-}
-
-.search-section h2 {
-text-align: center;
-margin-bottom: 1rem;
-}
-
-.search-bar {
-display: flex;
-}
-
-.search-bar input {
-flex: 1;
-padding: 10px;
-font-size: 16px;
-border: 1px solid #ccc;
-border-radius: 4px 0 0 4px;
-}
-
-.search-bar button {
-background-color: #28a745;
-color: white;
-border: none;
-padding: 10px 20px;
-border-radius: 0 4px 4px 0;
-cursor: pointer;
-}
-
-body {
-font-family: Arial, sans-serif;
-background-color: #f4f4f9;
-color: #333;
-}
-
-.container {
-max-width: 800px;
-margin: 50px auto;
-padding: 20px;
-background-color: #fff;
-border-radius: 8px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-text-align: center;
-margin-bottom: 20px;
-}
-
-.search-bar {
-display: flex;
-justify-content: center;
-margin-bottom: 20px;
-}
-
-.search-bar input {
-padding: 10px;
-width: 80%;
-border: 2px solid #ccc;
-border-radius: 4px;
-}
-
-.search-bar button {
-padding: 10px;
-border: none;
-background-color: #28a745;
-color: #fff;
-border-radius: 4px;
-cursor: pointer;
-}
-
-.search-bar button:hover {
-background-color: #218838;
-}
-
-#results {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-}
-
-.medicine-card {
-width: 200px;
-padding: 15px;
-background-color: #1e88e5;
-border-radius: 8px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-text-align: center;
-color: white;
-}
-
-.medicine-card h3 {
-margin-bottom: 10px;
-}
-
-.medicine-card p {
-font-size: 14px;
-margin: 5px 0;
-}
-
-#results p {
-padding: 8px;
-border-bottom: 1px solid #ccc;
-}
-.available { color: green; 
-}
-.unavailable { color: red; 
-}
-/* Report Form */
-.report-form-container {
-max-width: 600px;
-margin: 2rem auto;
-background: #f9f9f9;
-padding: 2rem;
-border-radius: 12px;
-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-}
-
-.report-form-container h1 {
-text-align: center;
-margin-bottom: 1.5rem;
-}
-
-form label {
-display: block;
-margin-top: 1rem;
-font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-width: 100%;
-padding: 10px;
-margin-top: 0.5rem;
-border-radius: 6px;
-border: 1px solid #ccc;
-box-sizing: border-box;
-}
-
-form button {
-margin-top: 1.5rem;
-padding: 12px;
-background-color: #007bff;
-color: #fff;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-width: 100%;
-font-size: 16px;
-}
-
-form button:hover {
-background-color: #0056b3;
-}
-
-.success-message {
-text-align: center;
-margin-top: 1rem;
-color: green;
-font-weight: bold;
-}
-.report-list-container {
-max-width: 800px;
-margin: 2rem auto;
-padding: 1rem;
-}
-
-.report-card {
-background: #fff;
-border-radius: 8px;
-padding: 1rem;
-margin-bottom: 1rem;
-box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-.report-card h3 {
-margin-top: 0;
-color: #007bff;
-}
-
-.report-card p {
-margin: 4px 0;
-}
-/*dashboard.css*/
-table { width: 100%; 
-border-collapse: collapse; 
-margin-top: 20px;
-}
-th, td { padding: 10px; 
-border: 1px solid #ccc;
- text-align: left;
- }
-form { margin-top: 20px;
-}
-input, select, button { margin: 5px 0;
- padding: 8px;
- }
- body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  margin: 0;
-  padding: 0;
-}
-
-.signup-container {
-  width: 400px;
-  margin: 100px auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-h2 {
-  text-align: center;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.input-group input[type="checkbox"] {
-  width: auto;
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-p {
-  text-align: center;
-}
-
-p a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-p a:hover {
-  text-decoration: underline;
-}
-/* General reset */
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-
-body {
-font-family: "Segoe UI", sans-serif;
-background-color: #f4f6f9;
-color: #333;
-padding: 20px;
-}
-
-/* Navbar */
-.navbar {
-background-color: #005792;
-padding: 1rem 2rem;
-color: #fff;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.logo {
-font-size: 1.4rem;
-font-weight: bold;
-}
-
-.nav-links {
-list-style: none;
-display: flex;
-gap: 1rem;
-}
-
-.nav-links a {
-color: #fff;
-text-decoration: none;
-font-weight: 500;
-}
-
-.nav-links a:hover {
-text-decoration: underline;
-}
-
-/* Main layout */
-.find-medicine-layout {
-display: grid;
-grid-template-columns: 1fr 2fr;
-gap: 2rem;
-margin-top: 2rem;
-align-items: start;
-}
-
-.image-section img {
-width: 100%;
-max-width: 400px;
-border-radius: 10px;
-}
-
-/* Search section */
-.search-section {
-background-color: #fff;
-padding: 2rem;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar {
-display: flex;
-gap: 1rem;
-margin-bottom: 1.5rem;
-}
-
-.search-bar input[type="text"] {
-flex: 1;
-padding: 0.5rem 1rem;
-border: 1px solid #ccc;
-border-radius: 5px;
-}
-
-.search-bar button {
-background-color: #005792;
-color: #fff;
-border: none;
-padding: 0.5rem 1rem;
-border-radius: 5px;
-cursor: pointer;
-}
-
-.search-bar button:hover {
-background-color: #003f63;
-}
-
-/* Results */
-#results ul {
-list-style-type: none;
-}
-
-#results li {
-margin-bottom: 0.8rem;
-font-size: 1rem;
-padding: 0.5rem;
-background-color: #e7f3ff;
-border-radius: 5px;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7fb;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-header a {
-  color: white;
-  text-decoration: none;
-}
-
-.find-medicine-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.intros {
-  text-align: center;
-  margin-bottom: 30px;
-}
 
-.intros h1 {
-  font-size: 2.5rem;
-  color: #333;
+/* Responsive Layout – ≤768px */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #2e3192;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  #menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
 }
-
-.intros p {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-.button1 {
-  margin-top: 20px;
-}
-
-.button1 .btn {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.button1 .btn:hover {
-  background-color: #0056b3;
-}
-
-.search-sections {
-  margin-top: 40px;
-  width: 100%;
-  max-width: 600px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.search-sections h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.form1 {
-  display: flex;
-  margin-bottom: 20px;
-  gap: 10px;
-  justify-content: center;
-}
-
-.form1 input[type="text"] {
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  flex-grow: 1;
-}
-
-.form1 button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.form1 button:hover {
-  background-color: #218838;
-}
-
-#results ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#results ul li {
-  font-size: 1.1rem;
-  padding: 8px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  margin: 10px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#results ul li strong {
-  color: #333;
-}
-
-#results ul li span {
-  margin-left: 10px;
-  font-size: 1.2rem;
-}
-
-#results p {
-  font-size: 1.2rem;
-  color: #dc3545;
-}
-.admin-medicine-page h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.medicine-table {
-  width: 90%;
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-
-.medicine-table th, .medicine-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
-.medicine-table th {
-  background-color: #f0f0f0;
-}
-
-.medicine-table a {
-  text-decoration: none;
-  color: #007BFF;
-}
-
-    @media (max-width: 768px) {
-      /* Hide the ul by default on small screens */
-      .nav-links {
-        flex-direction: column;
-        background: #2e3192;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%; /* Make it full width */
-        height: auto; /* Adjust height dynamically */
-        display: none; /* Hide by default */
-        text-align: center;
-        padding: 20px 0; /* Add some padding */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        z-index: 1000; /* Ensure it's above other content */
-      }
-
-      /* When the 'show' class is added to the ul, display it */
-      .nav-links .nav-links {
-        display: flex; /* Or 'block' if you prefer */
-      }
-
-      .nav-links {
-        margin: 10px 0; /* Adjust vertical margin for mobile links */
-      }
-
-      #menu-toggle {
-        display: block;
-        margin-left: auto;
-      }
-    }
