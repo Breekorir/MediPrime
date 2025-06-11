@@ -2017,3 +2017,74 @@
 {"level":"info","message":"GET /pharmacy_add_medicine","timestamp":"2025-06-09T17:24:07.308+03:00"}
 {"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-09T17:28:22.980+03:00"}
 {"level":"warn","message":"404 Not Found: /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2025-06-09T17:28:35.687+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-10T11:09:41.431+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-06-10T11:09:41.473+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-10T11:09:43.670+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-06-10T11:09:43.689+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-06-10T11:09:58.342+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:09:58.439+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-10T11:10:00.896+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-06-10T11:10:00.914+03:00"}
+{"level":"warn","message":"404 Not Found: /favicon.ico","timestamp":"2025-06-10T11:10:00.999+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-06-10T11:10:04.658+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:10:04.701+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-06-10T11:10:09.396+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:10:09.504+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-10T11:10:24.623+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-06-10T11:10:24.646+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-10T11:10:33.445+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-06-10T11:10:33.468+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-06-10T11:11:55.797+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:11:56.016+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-06-10T11:12:08.466+03:00"}
+{"level":"warn","message":"Login failed for user brigikorir4@gmail.com: Invalid credentials (email not found)","timestamp":"2025-06-10T11:12:08.490+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-06-10T11:12:23.149+03:00"}
+{"level":"warn","message":"Login failed for user brigidkorir4@gmail.com: Invalid credentials (email not found)","timestamp":"2025-06-10T11:12:23.159+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-06-10T11:12:34.038+03:00"}
+{"level":"warn","message":"Login failed for pharmacy brigidkorir4@gmail.com: Invalid credentials (email not found)","timestamp":"2025-06-10T11:12:34.069+03:00"}
+{"level":"info","message":"POST /login","timestamp":"2025-06-10T11:12:44.125+03:00"}
+{"level":"info","message":"pharmacy brigikorir4@gmail.com logged in successfully","timestamp":"2025-06-10T11:12:44.348+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:12:44.376+03:00"}
+{"level":"info","message":"GET /pharmacy_edit_medicines","timestamp":"2025-06-10T11:12:57.776+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:12:57.915+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:13:08.736+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:14:17.491+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:14:28.005+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:14:30.970+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:14:47.886+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:15:11.554+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:15:35.828+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:15:57.064+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:15:58.865+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:16:11.536+03:00"}
+{"level":"info","message":"GET /pharmacy/dashboard","timestamp":"2025-06-10T11:16:44.325+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-06-10T11:16:57.834+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:16:57.886+03:00"}
+{"level":"info","message":"GET /findPharmacy","timestamp":"2025-06-10T11:19:03.007+03:00"}
+{"level":"warn","message":"404 Not Found: /css/style.css","timestamp":"2025-06-10T11:19:03.120+03:00"}
+{"level":"info","message":"GET /api/pharmacies/search","timestamp":"2025-06-10T11:19:21.086+03:00"}
+{"level":"warn","message":"404 Not Found: /chatwindow","timestamp":"2025-06-10T11:19:49.952+03:00"}
+{"level":"warn","message":"404 Not Found: /css/style.css","timestamp":"2025-06-10T11:20:26.291+03:00"}
+{"level":"info","message":"GET /pharmacy/staff/manage for pharmacy 3","timestamp":"2025-06-10T11:21:24.901+03:00"}
+{"level":"warn","message":"404 Not Found: /css/style.css","timestamp":"2025-06-10T11:21:24.988+03:00"}
+{"level":"warn","message":"404 Not Found: /css/style.css","timestamp":"2025-06-10T11:23:12.072+03:00"}
+{"level":"info","message":"Socket connected: Atv1okl5NcCpN1vxAAAB","timestamp":"2025-06-10T11:23:12.223+03:00"}
+{"level":"info","message":"pharmacy 3 registered with socket Atv1okl5NcCpN1vxAAAB","timestamp":"2025-06-10T11:23:12.250+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-06-10T11:30:28.345+03:00"}
+{"level":"info","message":"Socket disconnected: Atv1okl5NcCpN1vxAAAB","timestamp":"2025-06-10T11:30:28.388+03:00"}
+{"level":"info","message":"Unregistered pharmacy-3 from connected clients.","timestamp":"2025-06-10T11:30:28.391+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:30:28.393+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-06-10T11:30:32.439+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:30:32.477+03:00"}
+{"level":"info","message":"GET /logout","timestamp":"2025-06-10T11:30:33.889+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-06-10T11:30:33.897+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:30:33.928+03:00"}
+{"level":"info","message":"GET /signup","timestamp":"2025-06-10T11:30:35.618+03:00"}
+{"level":"info","message":"GET /findMedicine","timestamp":"2025-06-10T11:30:39.838+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:30:39.869+03:00"}
+{"level":"info","message":"GET /login","timestamp":"2025-06-10T11:30:58.118+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:30:58.154+03:00"}
+{"level":"info","message":"GET /","timestamp":"2025-06-10T11:31:01.603+03:00"}
+{"level":"warn","message":"404 Not Found: /css/styles.css","timestamp":"2025-06-10T11:31:01.634+03:00"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-10T11:46:00.161+03:00"}
+{"level":"info","message":"Server started on http://localhost:3000","timestamp":"2025-06-10T11:46:00.185+03:00"}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with <%= recipientName %> - MediPrime</title>
+    <link rel="stylesheet" href="/css/style.css"> <style>
+        /* Basic styling for chat window */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 100px); /* Adjust height based on header/footer */
+        }
+        .chat-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            font-size: 1.2em;
+            margin: -20px -20px 20px -20px; /* Adjust to full width of container */
+        }
+        .messages-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            position: relative;
+            word-wrap: break-word; /* Ensure long words wrap */
+        }
+        .message.sent {
+            align-self: flex-end;
+            background-color: #dcf8c6; /* Light green for sent messages */
+            color: #333;
+            border-bottom-right-radius: 2px; /* Pointy corner */
+        }
+        .message.received {
+            align-self: flex-start;
+            background-color: #e5e5ea; /* Light gray for received messages */
+            color: #333;
+            border-bottom-left-radius: 2px; /* Pointy corner */
+        }
+        .message-time {
+            font-size: 0.75em;
+            color: #888;
+            margin-top: 5px;
+            text-align: right;
+        }
+        .message.received .message-time {
+            text-align: left;
+        }
+        .message-input-form {
+            display: flex;
+            gap: 10px;
+            padding-top: 10px; /* Space between messages and input */
+        }
+        .message-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 1em;
+            outline: none;
+        }
+        .message-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+        .send-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s ease;
+        }
+        .send-button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('_header') %>
+
+    <div class="container">
+        <div class="chat-header">
+            Chat with <%= recipientName %>
+            <% if (recipientRole === 'pharmacy_staff') { %>
+                (Staff)
+            <% } else { %>
+                (<%= recipientRole.charAt(0).toUpperCase() + recipientRole.slice(1) %>)
+            <% } %>
+        </div>
+
+        <div class="messages-container" id="messagesContainer">
+            <% if (messages && messages.length > 0) { %>
+                <% messages.forEach(message => { %>
+                    <%
+                        const isSent = (currentUserRole === 'pharmacy_staff' && message.sender_role === 'pharmacy') ? (currentPharmacyId === message.sender_id) : (currentUserRole === message.sender_role && currentUserId === message.sender_id);
+                    %>
+                    <div class="message <%= isSent ? 'sent' : 'received' %>">
+                        <%= message.content %>
+                        <div class="message-time">
+                            <%= new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) %>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p style="text-align: center; color: #777; margin-top: 20px;">No messages yet. Start the conversation!</p>
+            <% } %>
+        </div>
+
+        <form class="message-input-form" id="chatForm">
+            <input type="text" class="message-input" id="messageInput" placeholder="Type your message..." autofocus>
+            <button type="submit" class="send-button">Send</button>
+        </form>
+        <div id="chatError" class="error-message"></div>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const messagesContainer = document.getElementById('messagesContainer');
+        const messageInput = document.getElementById('messageInput');
+        const chatForm = document.getElementById('chatForm');
+        const chatError = document.getElementById('chatError');
+
+        // Scroll to the bottom of messages on load
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        // User data from server-side EJS variables
+        const currentUserId = '<%= currentUserId %>';
+        const currentUserRole = '<%= currentUserRole %>';
+        const currentPharmacyId = '<%= currentPharmacyId %>'; // Will be 'null' for non-staff
+        const recipientId = '<%= recipientId %>';
+        const recipientRole = '<%= recipientRole %>';
+
+        // 1. Register current client with the server's socket.io
+        socket.on('connect', () => {
+            console.log('Connected to chat server with ID:', socket.id);
+            socket.emit('register', { entityId: currentUserId, role: currentUserRole });
+        });
+
+        // 2. Handle incoming messages
+        socket.on('message', (message) => {
+            console.log('Received message:', message);
+            displayMessage(message);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to bottom
+            chatError.textContent = ''; // Clear any previous errors
+        });
+
+        // 3. Handle message errors
+        socket.on('messageError', (errorMessage) => {
+            chatError.textContent = errorMessage;
+            console.error('Chat error:', errorMessage);
+        });
+
+        // 4. Send message on form submit
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const content = messageInput.value.trim();
+            if (content) {
+                socket.emit('sendMessage', {
+                    senderId: currentUserId,
+                    senderRole: currentUserRole,
+                    recipientId: recipientId, // Note: The variable from EJS is recipientId not receiverId
+                    recipientRole: recipientRole, // Note: The variable from EJS is recipientRole not receiverRole
+                    content: content
+                });
+                messageInput.value = ''; // Clear input field
+                chatError.textContent = ''; // Clear any previous errors
+            }
+        });
+
+        // Helper function to display messages in the UI
+        function displayMessage(message) {
+            const messageDiv = document.createElement('div');
+            // Determine if the message was sent by the current user
+            // If it's a staff member, compare against their parent pharmacy ID
+            const isSent = (currentUserRole === 'pharmacy_staff' && message.sender_role === 'pharmacy')
+                ? (currentPharmacyId == message.sender_id) // Use == for type coercion if IDs are mixed types
+                : (currentUserRole === message.sender_role && currentUserId == message.sender_id);
+
+            messageDiv.classList.add('message', isSent ? 'sent' : 'received');
+            messageDiv.innerHTML = `
+                ${message.content}
+                <div class="message-time">
+                    ${new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </div>
+            `;
+            messagesContainer.appendChild(messageDiv);
+        }
+
+        // Auto-scroll to bottom on page load
+        window.addEventListener('load', () => {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        });
+    </script>
+</body>
+</html>

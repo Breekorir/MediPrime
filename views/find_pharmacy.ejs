@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Pharmacy - MediPrime</title>
+    <link rel="stylesheet" href="/css/style.css"> <style>
+        /* Basic styling for pharmacy search */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .form-group {
+            flex: 1 1 200px; /* Allows items to grow/shrink, min-width 200px */
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding/border in element's total width/height */
+        }
+        .search-button {
+            flex-shrink: 0; /* Don't shrink the button */
+            align-self: flex-end; /* Align to the bottom of the form group */
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
+        }
+        .search-button:hover {
+            background-color: #218838;
+        }
+
+        .results-container {
+            margin-top: 20px;
+        }
+        .pharmacy-card {
+            border: 1px solid #d4edda;
+            background-color: #d4edda33; /* Light green background */
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .pharmacy-card h3 {
+            margin-top: 0;
+            color: #28a745; /* Green for headings */
+            font-size: 1.5em;
+        }
+        .pharmacy-card p {
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        .no-results {
+            text-align: center;
+            color: #777;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('_header') %>
+
+    <div class="container">
+        <h1>Find a Pharmacy</h1>
+
+        <div class="search-form">
+            <div class="form-group">
+                <label for="pharmacyName">Pharmacy Name:</label>
+                <input type="text" id="pharmacyName" name="name" placeholder="e.g., MediCare Pharmacy">
+            </div>
+            <div class="form-group">
+                <label for="pharmacyLocation">Location (Address):</label>
+                <input type="text" id="pharmacyLocation" name="location" placeholder="e.g., Nairobi, CBD">
+            </div>
+            <div class="form-group">
+                <label for="pharmacyServices">Services Offered:</label>
+                <input type="text" id="pharmacyServices" name="services" placeholder="e.g., delivery, consultation">
+            </div>
+            <button type="button" class="search-button" id="searchBtn">Search</button>
+        </div>
+
+        <div class="results-container" id="pharmacyResults">
+            <p class="no-results" id="initialMessage">Enter search criteria and click 'Search' to find pharmacies.</p>
+            </div>
+    </div>
+
+
+    <script>
+        const searchBtn = document.getElementById('searchBtn');
+        const pharmacyNameInput = document.getElementById('pharmacyName');
+        const pharmacyLocationInput = document.getElementById('pharmacyLocation');
+        const pharmacyServicesInput = document.getElementById('pharmacyServices');
+        const pharmacyResultsContainer = document.getElementById('pharmacyResults');
+        const initialMessage = document.getElementById('initialMessage');
+
+        searchBtn.addEventListener('click', performPharmacySearch);
+
+        // Allow pressing Enter in input fields to trigger search
+        pharmacyNameInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performPharmacySearch(); });
+        pharmacyLocationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performPharmacySearch(); });
+        pharmacyServicesInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performPharmacySearch(); });
+
+        async function performPharmacySearch() {
+            const name = pharmacyNameInput.value.trim();
+            const location = pharmacyLocationInput.value.trim();
+            const services = pharmacyServicesInput.value.trim();
+
+            if (!name && !location && !services) {
+                alert('Please enter at least one search criterion.');
+                return;
+            }
+
+            // Construct query parameters
+            const queryParams = new URLSearchParams();
+            if (name) queryParams.append('name', name);
+            if (location) queryParams.append('location', location);
+            if (services) queryParams.append('services', services);
+
+            const url = `/api/pharmacies/search?${queryParams.toString()}`;
+
+            pharmacyResultsContainer.innerHTML = '<p class="no-results">Searching...</p>'; // Show loading message
+            initialMessage.style.display = 'none'; // Hide initial message
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to fetch pharmacies.');
+                }
+
+                renderResults(data.pharmacies);
+
+            } catch (error) {
+                console.error('Error fetching pharmacies:', error);
+                pharmacyResultsContainer.innerHTML = `<p class="no-results" style="color: red;">Error: ${error.message}. Please try again.</p>`;
+            }
+        }
+
+        function renderResults(pharmacies) {
+            pharmacyResultsContainer.innerHTML = ''; // Clear previous results
+
+            if (pharmacies.length === 0) {
+                pharmacyResultsContainer.innerHTML = '<p class="no-results">No pharmacies found matching your criteria.</p>';
+                return;
+            }
+
+            pharmacies.forEach(pharmacy => {
+                const card = document.createElement('div');
+                card.classList.add('pharmacy-card');
+                card.innerHTML = `
+                    <h3>${pharmacy.name}</h3>
+                    <p><strong>Address:</strong> ${pharmacy.address || 'N/A'}</p>
+                    <p><strong>Email:</strong> ${pharmacy.email || 'N/A'}</p>
+                    <p><strong>Phone:</strong> ${pharmacy.phone || 'N/A'}</p>
+                    <p><strong>Services:</strong> ${pharmacy.services || 'No specific services listed'}</p>
+                `;
+                pharmacyResultsContainer.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

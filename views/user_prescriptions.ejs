@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Prescriptions - MediPrime</title>
+    <link rel="stylesheet" href="/style.css"> <style>
+        /* Add some basic styling for the prescriptions page */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .prescription-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        .prescription-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .prescription-card p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .add-prescription-form {
+            background-color: #e6f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px dashed #91d5ff;
+        }
+        .add-prescription-form h2 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .no-prescriptions {
+            text-align: center;
+            color: #777;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+      <%- include("_header.ejs") %>
+ <div class="container">
+        <h1>My Prescriptions</h1>
+
+        <% if (prescriptions && prescriptions.length > 0) { %>
+            <% prescriptions.forEach(prescription => { %>
+                <div class="prescription-card">
+                    <h3>Prescription ID: <%= prescription.id %></h3>
+                    <p><strong>Doctor:</strong> <%= prescription.doctor_name %></p>
+                    <p><strong>Issued On:</strong> <%= new Date(prescription.issue_date).toLocaleDateString() %></p>
+                    <% if (prescription.expiry_date) { %>
+                        <p><strong>Expires On:</strong> <%= new Date(prescription.expiry_date).toLocaleDateString() %></p>
+                    <% } %>
+                    <p><strong>Medicine:</strong> <%= prescription.medicine_name || prescription.prescription_text || 'N/A' %></p>
+                    <p><strong>Quantity:</strong> <%= prescription.quantity %></p>
+                    <% if (prescription.notes) { %>
+                        <p><strong>Notes:</strong> <%= prescription.notes %></p>
+                    <% } %>
+                    <% if (prescription.file_path) { %>
+                        <p><strong>Attachment:</strong> <a href="<%= prescription.file_path %>" target="_blank">View Prescription File</a></p>
+                    <% } %>
+                    <p><small>Added On: <%= new Date(prescription.created_at).toLocaleString() %></small></p>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <div class="no-prescriptions">
+                <p>You don't have any prescriptions recorded yet.</p>
+                <p>Use the form below to add one.</p>
+            </div>
+        <% } %>
+
+        <div class="add-prescription-form">
+            <h2>Add New Prescription</h2>
+            <form action="/user/prescriptions/add" method="POST">
+                <div class="form-group">
+                    <label for="doctor_name">Doctor's Name:</label>
+                    <input type="text" id="doctor_name" name="doctor_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue_date">Issue Date:</label>
+                    <input type="date" id="issue_date" name="issue_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry_date">Expiry Date (Optional):</label>
+                    <input type="date" id="expiry_date" name="expiry_date">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity Prescribed:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="medicine_id">Medicine ID (Optional - if already in system):</label>
+                    <input type="number" id="medicine_id" name="medicine_id" placeholder="e.g., 123">
+                    <small>If you know the ID of the medicine from our system.</small>
+                </div>
+                <div class="form-group">
+                    <label for="prescription_text">Medicine Name / Prescription Details (Required if no Medicine ID):</label>
+                    <textarea id="prescription_text" name="prescription_text" placeholder="e.g., Amoxicillin 500mg, twice daily for 7 days"></textarea>
+                    <small>Provide full details if Medicine ID is not used.</small>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional):</label>
+                    <textarea id="notes" name="notes"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Add Prescription</button>
+            </form>
+        </div>
+    </div>
+</html>
